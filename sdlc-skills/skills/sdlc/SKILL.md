@@ -208,7 +208,7 @@ SPEC.md の「## アーキテクチャ設計」セクションに追記してく
 | → 設計 | SPEC.md が存在し、機能ごとの目的・固定要件が明記されている |
 | → 実装 | アーキテクチャが SPEC.md に記録され、目的との整合が確認済み・ユーザー承認済み |
 | → レビュー | テストが通り、テスト計画が SPEC.md に記録されている |
-| → デプロイ | レビュー指摘がすべて SPEC.md に記録・解決済み |
+| → デプロイ | レビュー指摘がすべて SPEC.md に記録・解決済み。**本番影響変更は /security 検証済み** |
 | → 完了 | SPEC.md の全受け入れ条件を照合済み・目的との最終整合を確認済み |
 
 ---
@@ -218,7 +218,12 @@ SPEC.md の「## アーキテクチャ設計」セクションに追記してく
 - **新機能の追加**: `/spec`(SPEC.md作成) → `/architect` → `/tdd` → `/review` → `/deploy`
 - **UI/UX 変更**: `/spec`(SPEC.md作成) → `/ui` → `/review`
 - **バグ修正**: SPEC.md確認 → `/tdd` → `/review`
-- **インフラ変更**: `/spec`(SPEC.md作成) → `/architect` → `/deploy` → `/observe`
+- **インフラ変更**: `/spec`(SPEC.md作成) → `/architect` → **`/security`** → `/deploy` → `/observe`
+
+> **本番影響変更では `/security` を必須フェーズとする**: DB 変更（migration）・本番デプロイ・
+> 認証・支払い・個人情報を含む変更は、`/review` の前または `/deploy` の前に `/security` を
+> 通す。これは省略不可（supervisor §8 G2 と整合）。Adversarial モード（能動的破壊試行）も
+> 本番影響の大きい機能で併せて依頼する。
 
 ---
 

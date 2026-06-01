@@ -232,6 +232,28 @@ cd sdlc-skills
 
 ---
 
+## 判断と検証の原則・行動の憲法（任意・手動導入）
+
+スキル群とは別に、エージェントの**判断の質**を底上げするためのテンプレートを `docs/` に同梱しています。
+これらは「ルールを書いても守れなかった」実プロジェクトでの失敗から確立された判断軸です。
+
+| ファイル | 位置づけ | 導入先 |
+|---|---|---|
+| [`docs/judgment-principles.md`](docs/judgment-principles.md) | 全エージェント向けの**薄い普遍要旨**（判断と検証の原則 5 項目）| `~/.claude/CLAUDE.md` に**手動追記** |
+| [`docs/work-constitution.md`](docs/work-constitution.md) | Supervisor 向けの**詳細正典**（行動の憲法 全12条）| Supervisor のメモリ（例: `~/.claude/agent-memory/supervisor/`）に**手動配置** |
+
+`CLAUDE.md` に書いた内容は fork スキル・subagent に自動継承されるため、薄い要旨はそこに置きます。
+詳細と各条の本質は `work-constitution.md` に置き、二重定義を避けます（単一情報源）。
+
+> **`install.sh` はこれらを配置しません。** インストーラは `skills/`・`agents/`・`hooks/` のみを
+> `~/.claude/` に展開し、**あなたの `CLAUDE.md` や憲法ファイルは一切上書きしません**。
+> 判断の原則・憲法の導入は、内容を確認のうえ各テンプレート冒頭の手順に従って**手動で**行ってください。
+
+導入は任意です。スキル群だけでも動作します。原則・憲法を入れると、Supervisor の危険信号検知
+（§7）や簡略実行時の最小ゲート（§8）の判断根拠が明確になります。
+
+---
+
 ## 安全のための補助機能
 
 仕様書プロセスとは別に、物理的なガードレールも含まれています。
@@ -271,7 +293,9 @@ sdlc-skills/
 ├── scripts/    install.sh
 └── docs/
     ├── design-decisions.md    設計判断の記録
-    └── pretooluse-guards.md   ガード仕様
+    ├── pretooluse-guards.md   ガード仕様
+    ├── work-constitution.md   行動の憲法（Supervisor 正典テンプレート・手動導入）
+    └── judgment-principles.md 判断と検証の原則（CLAUDE.md 追記テンプレート・手動導入）
 ```
 
 ---
@@ -356,6 +380,8 @@ AI の実行力を最大限に活かしながら、人間が合意した仕様�
 
 - **`install.sh` は既存の `~/.claude/skills/`, `~/.claude/agents/`, `~/.claude/hooks/` を上書きします。**  
   実行前に `.backup-YYYYMMDD-HHMMSS/` へ自動バックアップされますが、重要な独自スキルがある場合は事前確認してください。
+- **`install.sh` は `~/.claude/CLAUDE.md` および憲法・原則テンプレート（`docs/` 配下）を上書きしません。**  
+  判断の原則・行動の憲法は手動導入です（[該当セクション](#判断と検証の原則行動の憲法任意手動導入)参照）。
 - 個人プロジェクト・ベストエフォート保守。Issue / PR 歓迎。
 
 ---
@@ -375,3 +401,5 @@ AI の実行力を最大限に活かしながら、人間が合意した仕様�
 
 - [設計判断の記録](docs/design-decisions.md)
 - [PreToolUse ガード仕様](docs/pretooluse-guards.md)
+- [行動の憲法（Supervisor 正典テンプレート）](docs/work-constitution.md)
+- [判断と検証の原則（CLAUDE.md 追記テンプレート）](docs/judgment-principles.md)
