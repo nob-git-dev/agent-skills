@@ -81,6 +81,7 @@ agent-native に作る——など、計 12 条。詳細は
 |---|---|
 | **[sdlc-skills/](sdlc-skills/)** | SDLC を仕様書中心に規律正しく進めるスキルセット。12 スキル（`/sdlc` `/spec` `/architect` `/tdd` `/review` `/security` `/deploy` ほか）+ 4 サブエージェント + 3 フック + 行動の憲法。**まずここを参照してください** |
 | **[learning-skills/](learning-skills/)** | 完了したプロジェクトから AI 自身の挙動を学習し、**人間のゲートを通して**改善する自己改善パイプライン。3 スキル（`/post-project-learning-engine` `/skill-proposal-engine` `/skill-regression-checker`）。`観測 → 抽出 → 提案 → 回帰検査` の多段ゲートで、学習の暴走（過剰一般化・肥大化・回帰）を防ぐ。sdlc-skills と合わせて「やる → やり方を直す」の閉ループになる |
+| [dgx-update-check/](dgx-update-check/) | **特定ハードウェア向け運用スキルの実例**。DGX Spark（GX10）のシステムアップデートを、ブラウザ・ダッシュボードのボタンを押す **前に**「何が来ているか」を **副作用ゼロ・read-only** で覗き見る単体スキル。`apt update` の体験を DGX OTA 文脈で再現。決定的なデータ層と判断層の二層分離で安全を構造的に担保。ARM64 / Ubuntu 24.04 / DGX Spark 専用。sdlc-skills の SDLC オーケストレーションで開発された応用例でもある |
 
 ---
 
@@ -118,4 +119,4 @@ cd sdlc-skills
 
 各スキルセットのディレクトリ内の `LICENSE` を参照してください。
 いずれのスキルセットも、個人・研究・非営利は **CC BY-NC-SA 4.0**（無償）、営利利用は**商用ライセンス**（要申請）です。
-ライセンス本文: [sdlc-skills](sdlc-skills/LICENSE) / [learning-skills](learning-skills/LICENSE)。
+ライセンス本文: [sdlc-skills](sdlc-skills/LICENSE) / [learning-skills](learning-skills/LICENSE) / [dgx-update-check](dgx-update-check/LICENSE)。
