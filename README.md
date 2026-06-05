@@ -8,6 +8,22 @@ AI エージェントはコードを速く書けます。しかしその速さ�
 
 ---
 
+## Portfolio Snapshot
+
+このリポジトリは、AI エージェントを単なるコード生成器としてではなく、
+**仕様・設計・検証・安全ゲートを備えた開発実行基盤**として扱うための実装です。
+
+| 観点 | 内容 |
+|---|---|
+| **Problem** | AI エージェントに開発を任せると、実装速度は上がる一方で、仕様確認・安全確認・レビュー・検証が抜け落ちやすい。 |
+| **Built** | Supervisor、SDLC オーケストレーター、12 個の専門スキル、PreToolUse Hook、学習パイプライン。 |
+| **Technical Focus** | Spec-first development、human-in-the-loop approval、agent safety gates、TDD / review / security / deploy workflow、post-project learning with regression checks。 |
+| **AI Agent Role** | AI エージェントは調査・実装・レビュー補助を担い、人間は仕様承認、危険操作の許可、品質ゲートの判断を握る。 |
+| **Evidence** | install script、hooks、subagent definitions、SPEC.md 駆動ワークフロー、行動の憲法、設計判断ドキュメント。 |
+| **Maturity** | 個人開発・研究・AI 開発プロセス設計向け。商用利用は別途ライセンス相談。 |
+
+---
+
 ## なぜ作ったか — Vibe Coding の先にある課題
 
 「AI に頼めば動くものができる」——この体験（**Vibe Coding**）は、開発の敷居を劇的に下げました。
