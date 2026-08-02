@@ -1,0 +1,4 @@
+interface:
+  display_name: "Editing Engineering"
+  short_description: "事実と書き手の声を保ち日本語文章の関係と構成を再設計します"
+  default_prompt: "$edit-with-editing-engineering を使って、この文章を編集工学で再構成してください。"

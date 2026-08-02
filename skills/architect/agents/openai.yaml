@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Design"
+  short_description: "依存方向・コンポーネント境界・ADRを整理して設計します"
+  default_prompt: "$architect を使って、この変更のアーキテクチャとADRを設計してください。"

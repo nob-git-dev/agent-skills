@@ -1,0 +1,4 @@
+interface:
+  display_name: "Domain-Driven Design"
+  short_description: "業務用語・境界づけられたコンテキスト・集約を設計します"
+  default_prompt: "$ddd を使って、この業務領域のドメインモデルを設計してください。"

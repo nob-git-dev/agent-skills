@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Review"
+  short_description: "脅威・認可・依存関係・秘密情報・濫用ケースを検証します"
+  default_prompt: "$security を使って、この変更のセキュリティリスクを検証してください。"

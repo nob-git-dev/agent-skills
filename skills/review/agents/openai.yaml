@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "仕様適合・正確性・安全性・性能・テストを根拠つきでレビューします"
+  default_prompt: "$review を使って、この変更を重要度と根拠つきでレビューしてください。"

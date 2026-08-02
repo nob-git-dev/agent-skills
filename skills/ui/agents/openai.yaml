@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI and UX Design"
+  short_description: "利用目的・状態・アクセシビリティを基点にUIを設計します"
+  default_prompt: "$ui を使って、この画面をアクセシブルに設計・実装してください。"

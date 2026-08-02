@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Business Documents"
+  short_description: "会話や断片情報を第三者に伝わる日本語ビジネス文書へ整えます"
+  default_prompt: "$write-clear-business-docs を使って、この素材を明確なビジネス文書にしてください。"

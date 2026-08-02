@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Proposal Engine"
+  short_description: "複数の学習候補を評価し適切な反映先と更新案を提案します"
+  default_prompt: "$skill-proposal-engine を使って、学習候補からSkill Patchを提案してください。"
