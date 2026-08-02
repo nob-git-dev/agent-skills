@@ -1,0 +1,4 @@
+interface:
+  display_name: "Safe Refactoring"
+  short_description: "振る舞いを保ちテストで守りながらコード構造を改善します"
+  default_prompt: "$refactor を使って、このコードを安全にリファクタリングしてください。"

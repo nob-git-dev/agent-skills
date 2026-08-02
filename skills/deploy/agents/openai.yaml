@@ -1,0 +1,4 @@
+interface:
+  display_name: "Safe Deployment"
+  short_description: "段階リリース・中断基準・検証・ロールバックを設計します"
+  default_prompt: "$deploy を使って、この変更の安全なリリース計画を作ってください。"

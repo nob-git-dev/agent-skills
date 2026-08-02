@@ -1,0 +1,4 @@
+interface:
+  display_name: "Japanese LLM Benchmark"
+  short_description: "日本語LLMベンチマークを安全かつ再現可能な条件で実行します"
+  default_prompt: "$jlmb を使って、このモデルを再現可能な条件で評価してください。"

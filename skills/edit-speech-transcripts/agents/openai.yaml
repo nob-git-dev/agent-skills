@@ -1,0 +1,4 @@
+interface:
+  display_name: "Edit Speech Transcripts"
+  short_description: "発話内容を保ちながら日本語文字起こしを正確に整えます"
+  default_prompt: "$edit-speech-transcripts を使って、この日本語文字起こしを校正してください。"

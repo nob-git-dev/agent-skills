@@ -1,0 +1,4 @@
+interface:
+  display_name: "Site Reliability Engineering"
+  short_description: "SLI・SLO・エラーバジェット・障害対応を定量的に設計します"
+  default_prompt: "$sre を使って、このサービスの信頼性目標と運用を設計してください。"

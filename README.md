@@ -1,139 +1,99 @@
-# claude-skills
+# Agent Skills
 
-> **AI にコードを「書かせる」ためではなく、AI と「規律をもって開発する」ための Claude Code 拡張集。**
+> AIにコードを「書かせる」だけでなく、AIエージェントと規律をもって開発・学習・編集するための、独立したAgent Skills集。
 
-> 全体ポートフォリオ: [AI Agent Engineering Portfolio](https://github.com/nob-git-dev/ai-agent-portfolio)
+全体ポートフォリオ: [AI Agent Engineering Portfolio](https://github.com/nob-git-dev/ai-agent-portfolio)
 
-AI エージェントはコードを速く書けます。しかしその速さは、放っておくと**そのまま事故の速さ**になります。
-このリポジトリは、AI の実行力を活かしながら、**品質・安全・保守性を人間が握り続ける**ための
-スキル・サブエージェント・フックを提供します。
+このリポジトリは、各スキルを `skills/<skill-name>/` の1フォルダ単位で公開します。すべてのスキルは [Agent Skills specification](https://agentskills.io/specification) に沿った `SKILL.md` を持ち、対応するエージェントクライアントへ1つずつ導入できます。
 
----
+特定のマシンやローカル環境を整備するスキルは含めていません。ホームディレクトリ、ポート、モデル、サービス構成など、利用者固有の環境を前提にしない構成です。
 
-## Portfolio Snapshot
+## 収録スキル
 
-このリポジトリは、AI エージェントを単なるコード生成器としてではなく、
-**仕様・設計・検証・安全ゲートを備えた開発実行基盤**として扱うための実装です。
+### Software delivery
 
-| 観点 | 内容 |
+| Skill | Purpose |
 |---|---|
-| **Problem** | AI エージェントに開発を任せると、実装速度は上がる一方で、仕様確認・安全確認・レビュー・検証が抜け落ちやすい。 |
-| **Built** | Supervisor、SDLC オーケストレーター、12 個の専門スキル、PreToolUse Hook、学習パイプライン。 |
-| **Technical Focus** | Spec-first development、human-in-the-loop approval、agent safety gates、TDD / review / security / deploy workflow、post-project learning with regression checks。 |
-| **AI Agent Role** | AI エージェントは調査・実装・レビュー補助を担い、人間は仕様承認、危険操作の許可、品質ゲートの判断を握る。 |
-| **Evidence** | install script、hooks、subagent definitions、SPEC.md 駆動ワークフロー、行動の憲法、設計判断ドキュメント。 |
-| **Maturity** | 個人開発・研究・AI 開発プロセス設計向け。商用利用は別途ライセンス相談。 |
+| [sdlc](skills/sdlc/) | リスクに応じて仕様・設計・実装・レビュー・デプロイを統制する |
+| [spec](skills/spec/) | 目的、振る舞い、受け入れ条件、固定要件を仕様へ落とす |
+| [architect](skills/architect/) | 境界、依存方向、影響範囲、ADRを設計する |
+| [ddd](skills/ddd/) | ユビキタス言語、コンテキスト、集約を設計する |
+| [tdd](skills/tdd/) | 受け入れ条件をテストへ変換し、Red-Green-Refactorで実装する |
+| [ui](skills/ui/) | UI/UX、React、アクセシビリティ、操作検証を扱う |
+| [review](skills/review/) | 正確性、セキュリティ、性能、保守性、テストをレビューする |
+| [security](skills/security/) | 脅威、アクセス制御、依存関係、シークレット、濫用を検証する |
+| [deploy](skills/deploy/) | 段階リリース、ヘルスチェック、中断、ロールバックを設計・実行する |
+| [observe](skills/observe/) | ログ、メトリクス、トレース、アラートを設計する |
+| [sre](skills/sre/) | SLI/SLO、エラーバジェット、障害対応、トイルを扱う |
+| [refactor](skills/refactor/) | 振る舞いを保ちながらコード構造を改善する |
 
----
+### Agent learning
 
-## なぜ作ったか — Vibe Coding の先にある課題
-
-「AI に頼めば動くものができる」——この体験（**Vibe Coding**）は、開発の敷居を劇的に下げました。
-エンジニアでなくてもアイデアをソフトウェアにできる。これは「**床を上げた**」と言えます。
-
-しかし、本番で使えるソフトウェアには別の規律が要ります。Andrej Karpathy はこれを
-**Agentic Engineering**——「失敗しうるエージェントを調整し、品質・セキュリティ・保守性を
-保ちながら**天井を上げる**専門的規律」——と整理しました。その本質は、エージェントに丸投げせず、
-**仕様・計画・検証・権限・レビュー・理解を人間が握り続けること**です。
-
-このリポジトリの開発者自身、AI に開発を任せる中で**本番データベースの全消失を短期間に 2 回**
-経験しました。`CLAUDE.md` にルールを書いても、メモリに記録しても、防げませんでした。
-
-そこで得た結論はシンプルです:
-
-> **ルールを「書いて渡す」のではなく、プロセスを「守らざるを得ない構造」にする。**
-
-「守ろうと思う」だけでは、人も AI も忘れます。だから構造で強制します。
-
----
-
-## 3 つの柱
-
-### 1. Supervisor — 常駐する「最初の窓口」
-
-スキルは**呼ばれなければ何もしません**。Supervisor はすべての発言を受け取り、意図を分類し
-（開発か / 質問か / 危険な操作か）、危険信号（削除・本番・マイグレーション等）を手前で止め、
-**承認なしには次に進みません**。「気づいたら実行されていた」を構造的に防ぎます。
-
-### 2. SDLC オーケストレーション — 仕様書が開発を駆動する
-
-`SPEC.md`（仕様書）を唯一の真実（Single Source of Truth）とし、
-`仕様 → 設計 → 実装 → レビュー → デプロイ` を**品質ゲート**で進めます。
-各フェーズは `context: fork` で隔離実行され、引き継ぎは SPEC.md と git だけを経由します。
-完了は「動いた」ではなく、**受け入れ条件を一つずつ照合して**判断します。
-
-### 3. 行動の憲法 — 失敗から確立した判断軸（全 12 条）
-
-ルールの羅列ではなく、**「なぜ守るか（経緯と本質）」を保持する上位原則**です。
-実プロジェクトの失敗から条文化されました。一部を挙げると:
-
-- **検証した事実だけに従う** — 表示・記憶・未実行の結果は「主張」。検証した値だけを事実とする
-- **リスクに比例して検証を厚くする** — 読むだけは速く、消す / 本番に触れるほど段数を増やす
-- **権威ある定義元を当たる** — 手探りや記憶でなく、一次情報（ソース・定義・実データ）を先に読む
-- **借り物の解は適用条件を照合する** — 「少量向け」の手法を本番規模で検算せずに使わない
-- **本番影響は能動的に壊しにいって検証する** — 「動く」ではなく「壊せない」を確かめてから出す
-
-ほかに、全層を掃いて完了する / 対症でなく根治へ / 公式の継ぎ目を尊重する / 判断を外在化する /
-agent-native に作る——など、計 12 条。詳細は
-[`sdlc-skills/docs/work-constitution.md`](sdlc-skills/docs/work-constitution.md)。
-
----
-
-## 思想の系譜
-
-| 源流 | 受け継いだもの |
+| Skill | Purpose |
 |---|---|
-| Andrej Karpathy "Agentic Engineering" | 天井を上げる規律。仕様・検証・レビュー・理解を人間が握る |
-| 古典的ソフトウェア工学 | Uncle Bob（TDD 三法則）/ Kent Beck / Fowler（リファクタリング）/ Evans（DDD）/ Google SRE |
-| 実プロジェクトの失敗 | 本番事故から条文化した「行動の憲法」（経緯と本質を保持） |
+| [post-project-learning-engine](skills/post-project-learning-engine/) | 完了案件から次回の行動ルール候補を抽出する |
+| [skill-proposal-engine](skills/skill-proposal-engine/) | 複数の学習候補を評価し、適切な反映先とSkill Patchを提案する |
+| [skill-regression-checker](skills/skill-regression-checker/) | Skill Patchの回帰、矛盾、過剰一般化、副作用を検査する |
 
-設計判断の詳細: [`sdlc-skills/docs/design-decisions.md`](sdlc-skills/docs/design-decisions.md)
+### Writing and editing
 
----
-
-## 収録スキルセット
-
-各スキルセットは独立したサブディレクトリに収録されています。
-
-| ディレクトリ | 内容 |
+| Skill | Purpose |
 |---|---|
-| **[sdlc-skills/](sdlc-skills/)** | SDLC を仕様書中心に規律正しく進めるスキルセット。12 スキル（`/sdlc` `/spec` `/architect` `/tdd` `/review` `/security` `/deploy` ほか）+ 4 サブエージェント + 3 フック + 行動の憲法。**まずここを参照してください** |
-| **[learning-skills/](learning-skills/)** | 完了したプロジェクトから AI 自身の挙動を学習し、**人間のゲートを通して**改善する自己改善パイプライン。3 スキル（`/post-project-learning-engine` `/skill-proposal-engine` `/skill-regression-checker`）。`観測 → 抽出 → 提案 → 回帰検査` の多段ゲートで、学習の暴走（過剰一般化・肥大化・回帰）を防ぐ。sdlc-skills と合わせて「やる → やり方を直す」の閉ループになる |
+| [edit-speech-transcripts](skills/edit-speech-transcripts/) | 日本語音声認識の誤りを直し、発話を保った読みやすい記録へ整える |
+| [edit-with-editing-engineering](skills/edit-with-editing-engineering/) | 編集工学のアプローチで日本語テキストの関係・構成・価値を再設計する |
+| [write-clear-business-docs](skills/write-clear-business-docs/) | 会話や断片情報を第三者に伝わる日本語ビジネス文書へ変換する |
 
----
+### LLM evaluation
 
-## クイックスタート
+| Skill | Purpose |
+|---|---|
+| [jlmb](skills/jlmb/) | Japanese LLM Benchmarkを安全かつ再現可能に実行・比較する |
+
+合計19スキルです。
+
+## 設計方針
+
+- **1 skill = 1 directory**: 必要なスキルだけを個別に取得・更新できる
+- **Portable core**: 特定エージェント製品のコマンド、フック、サブエージェント構文を必須にしない
+- **Safe by default**: コミット、デプロイ、破壊的操作、外部書き込みを暗黙に実行しない
+- **Evidence over memory**: 変わり得る環境情報は、記憶ではなく現在の設定と観測で確認する
+- **Progressive disclosure**: 長い基準、テンプレート、スクリプトは各スキルの `references/`、`assets/`、`scripts/` に分ける
+
+## インストール
+
+まずリポジトリを取得します。
 
 ```bash
-git clone https://github.com/nob-git-dev/claude-skills.git
-cd claude-skills/sdlc-skills
-./scripts/install.sh
+git clone https://github.com/nob-git-dev/agent-skills.git
+cd agent-skills
 ```
 
-インストール後、`~/.claude/settings.json` に Supervisor とフックを追加します
-（テンプレートと詳細は [sdlc-skills/README.md](sdlc-skills/README.md)）。
-次回 `claude` 起動時から Supervisor が常駐し、開発タスクを自動的に `/sdlc` へ誘導します。
+利用するクライアントのスキル導入方法に従い、必要な `skills/<skill-name>/` ディレクトリだけを登録またはコピーしてください。フォルダ名を変える場合は、`SKILL.md` の `name` も同じ名前に合わせます。
 
-### 特定のスキルセットだけ取得（sparse-checkout）
+例として、Gitの sparse-checkout なら1スキルだけ取得できます。
 
 ```bash
-git clone --no-checkout https://github.com/nob-git-dev/claude-skills.git
-cd claude-skills
+git clone --filter=blob:none --no-checkout https://github.com/nob-git-dev/agent-skills.git
+cd agent-skills
 git sparse-checkout init --cone
-git sparse-checkout set sdlc-skills
+git sparse-checkout set skills/security
 git checkout main
-cd sdlc-skills
-./scripts/install.sh
 ```
 
-> **`install.sh` は `skills/` `agents/` `hooks/` のみを `~/.claude/` に展開し、
-> あなたの `CLAUDE.md` や憲法ファイルは一切上書きしません。** 判断の原則・行動の憲法の導入は
-> 内容を確認のうえ手動で行います（各スキルセットの README 参照）。
+クライアントが `agents/openai.yaml` を使わない場合、そのファイルは無視して構いません。ポータブルな指示本体は `SKILL.md` です。
 
----
+## SkillとPluginの違い
+
+Skillは、1つの仕事を行うための独立した指示・参照資料・スクリプトです。Pluginは、複数のSkillやツールをまとめて配布するためのパッケージです。
+
+このリポジトリでは再利用しやすいSkillを1つずつ公開します。必要に応じて、利用するクライアント側で複数スキルをPluginとして束ねられます。
+
+## 安全性
+
+スキルはエージェントの判断を支援しますが、実行環境の権限規則やユーザー承認を置き換えません。特に、削除、データ移行、本番変更、外部送信、長時間の資源占有では、対象・影響・可逆性を確認してください。
+
+JLMBの補助スクリプトはローカルのループバックアドレスを既定とし、APIキーを環境変数から読みます。実行前にコードと依存関係を確認してください。
 
 ## ライセンス
 
-各スキルセットのディレクトリ内の `LICENSE` を参照してください。
-いずれのスキルセットも、個人・研究・非営利は **CC BY-NC-SA 4.0**（無償）、営利利用は**商用ライセンス**（要申請）です。
-ライセンス本文: [sdlc-skills](sdlc-skills/LICENSE) / [learning-skills](learning-skills/LICENSE)。
+個人・研究・非営利利用は [CC BY-NC-SA 4.0](LICENSE) です。営利企業内での利用や商用サービスへの組み込みは [Commercial License](LICENSE-COMMERCIAL.md) を確認してください。

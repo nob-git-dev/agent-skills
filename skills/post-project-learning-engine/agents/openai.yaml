@@ -1,0 +1,4 @@
+interface:
+  display_name: "Post-Project Learning"
+  short_description: "完了した作業から次回に使える行動ルール候補を抽出します"
+  default_prompt: "$post-project-learning-engine を使って、今回の作業から学習候補を抽出してください。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Regression Checker"
+  short_description: "スキル更新案の回帰・矛盾・過剰一般化・副作用を検査します"
+  default_prompt: "$skill-regression-checker を使って、このSkill Patchの回帰を検査してください。"

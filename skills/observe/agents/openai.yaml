@@ -1,0 +1,4 @@
+interface:
+  display_name: "Observability Design"
+  short_description: "ログ・メトリクス・トレース・アラートを調査可能に設計します"
+  default_prompt: "$observe を使って、このサービスのオブザーバビリティを設計してください。"

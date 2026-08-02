@@ -1,0 +1,4 @@
+interface:
+  display_name: "Specification Design"
+  short_description: "目的・振る舞い・受け入れ条件・固定要件を検証可能に定義します"
+  default_prompt: "$spec を使って、この依頼を検証可能なSPEC.mdへ整理してください。"

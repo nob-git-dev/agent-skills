@@ -1,0 +1,4 @@
+interface:
+  display_name: "SDLC Orchestrator"
+  short_description: "リスクに応じて仕様から検証・リリースまで品質ゲートを統制します"
+  default_prompt: "$sdlc を使って、この開発タスクを仕様駆動で最後まで進めてください。"

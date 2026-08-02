@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test-Driven Development"
+  short_description: "受け入れ条件をテストへ変換しRed-Green-Refactorで実装します"
+  default_prompt: "$tdd を使って、この変更をテスト駆動で実装してください。"
