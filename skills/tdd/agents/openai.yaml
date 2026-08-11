@@ -1,4 +1,4 @@
 interface:
   display_name: "Test-Driven Development"
-  short_description: "受け入れ条件をテストへ変換しRed-Green-Refactorで実装します"
-  default_prompt: "$tdd を使って、この変更をテスト駆動で実装してください。"
+  short_description: "Proof Obligationを最小十分変更でPASSへ変えます"
+  default_prompt: "$tdd を使って、未達Proof ObligationをRed-Green-RefactorでPASSへ変えてください。"

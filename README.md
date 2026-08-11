@@ -18,7 +18,8 @@
 | [spec](skills/spec/) | 目的、振る舞い、受け入れ条件、固定要件を仕様へ落とす |
 | [architect](skills/architect/) | 境界、依存方向、影響範囲、ADRを設計する |
 | [ddd](skills/ddd/) | ユビキタス言語、コンテキスト、集約を設計する |
-| [tdd](skills/tdd/) | 受け入れ条件をテストへ変換し、Red-Green-Refactorで実装する |
+| [test-contract](skills/test-contract/) | RequirementからObservable、Evidence、Proof Obligationを固定する |
+| [tdd](skills/tdd/) | Proof ObligationをRed-Green-Refactorと最小十分変更でPASSへ変える |
 | [ui](skills/ui/) | UI/UX、React、アクセシビリティ、操作検証を扱う |
 | [review](skills/review/) | 正確性、セキュリティ、性能、保守性、テストをレビューする |
 | [security](skills/security/) | 脅威、アクセス制御、依存関係、シークレット、濫用を検証する |
@@ -49,7 +50,7 @@
 |---|---|
 | [jlmb](skills/jlmb/) | Japanese LLM Benchmarkを安全かつ再現可能に実行・比較する |
 
-合計19スキルです。
+合計20スキルです。
 
 ## 設計方針
 

@@ -1,6 +1,6 @@
 ---
 name: sdlc
-description: SPEC.mdを中心に、仕様、設計、実装、TDD、レビュー、セキュリティ、デプロイをリスクに応じて段階的に進めるSDLCオーケストレーター。開発タスクを規律あるプロセスで進める時や仕様駆動開発を求められた時に使う。
+description: SPEC.mdを中心に、仕様、設計、Test Contract、TDD、レビュー、セキュリティ、デプロイをリスクに応じて段階的に進めるSDLCオーケストレーター。開発タスクを規律あるプロセスで進める時や仕様駆動開発を求められた時に使う。
 ---
 
 # SDLC オーケストレーター
@@ -11,7 +11,7 @@ description: SPEC.mdを中心に、仕様、設計、実装、TDD、レビュー
 
 - 現在のユーザー依頼、利用中クライアントの権限規則、リポジトリ内の指示を優先する。特定製品の呼び出し構文、サブエージェント、Kanban、ディレクトリ構成を前提にしない。
 - `SPEC.md` があれば目的、受け入れ条件、固定要件の正典として読む。無ければタスクの規模に応じて作成するか、現在の依頼から軽量な作業契約を明示する。
-- `spec`、`architect`、`ddd`、`tdd`、`ui`、`review`、`security`、`deploy`、`sre`、`observe`、`refactor` は任意の連携先である。利用できれば適切な局面で使い、無ければ同じ観点をこのワークフロー内で確認する。
+- `spec`、`architect`、`ddd`、`ui`、`test-contract`、`tdd`、`review`、`security`、`deploy`、`sre`、`observe`、`refactor` は任意の連携先である。利用できれば適切な局面で使い、無ければ同じ観点をこのワークフロー内で確認する。
 - ユーザーが明示的に依頼しない限り、`git add`、`git commit`、`git push`、デプロイ、外部への書き込み、破壊的操作を行わない。
 - 環境、依存関係、サービス状態、バージョン、資源量など変わり得る事実は、記憶や古い文書だけで決めず、実際の設定と読み取り専用の観測で確認する。
 - 未コミットの変更はユーザーの作業として保全する。範囲外の変更を戻さない。
@@ -88,7 +88,8 @@ description: SPEC.mdを中心に、仕様、設計、実装、TDD、レビュー
 | 設計 (`architect`) | 境界、依存、技術選定、移行を変える | 構造、影響マップ、ADR |
 | ドメイン (`ddd`) | 複雑な業務概念や整合性境界がある | 用語、コンテキスト、集約 |
 | UI (`ui`) | 画面、操作、アクセシビリティを変える | UX設計、状態、操作テスト |
-| 実装・TDD (`tdd`) | 振る舞いを追加・修正する | Red-Green-Refactor、テスト証拠 |
+| Test Contract (`test-contract`) | 振る舞いを実装する前 | Required Observable、Evidence要件、Proof Obligation |
+| 実装・TDD (`tdd`) | 未達Proof Obligationを実装する | Red-Green-Refactor、Minimum Sufficient Change、Evidence |
 | リファクタ (`refactor`) | 振る舞いを保って構造を変える | 小さな変更、回帰確認 |
 | レビュー (`review`) | コードまたは設定を変更した | 重要度・根拠つき指摘、判定 |
 | セキュリティ (`security`) | 信頼境界、機密データ、高リスク変更 | 脅威、対策、残余リスク |
@@ -98,14 +99,21 @@ description: SPEC.mdを中心に、仕様、設計、実装、TDD、レビュー
 
 すべてのフェーズを機械的に実行しない。省略するフェーズは、リスク上不要である理由を短く記録する。
 
+標準的な新機能は `spec -> 必要なdesign -> test-contract -> tdd -> review` の順で進める。軽量変更ではExpected behavior、Observable、Verification commandだけの簡易Contractでよい。認証、認可、金銭、個人情報、永続化、移行、破壊操作、外部副作用、本番、高負荷を含む場合は、Security / Reliability / Outer Gateを含む詳細Contractを要求する。
+
 ## 5. 実装を小さく進める
 
 1. 変更前の基準となるテストまたは観測結果を取る。
-2. 受け入れ条件に対応する失敗テストを可能な範囲で先に作る。
-3. 条件を満たす最小の変更を行う。
-4. 関連テストを実行し、回帰がないことを確認する。
-5. 構造改善が必要なら、テストが通る状態で小さく行う。
-6. 各段階で、目的・固定要件・スコープから逸脱していないか照合する。
+2. Test ContractでRequirementからRequired Observable、Evidence、Proof Obligationを固定する。
+3. 未達Proof Obligationを1つ選び、必要な制約、現在Evidence、関連ファイルだけへコンテキストを絞る。
+4. 対応する失敗テストを実行してRedを確認する。
+5. Minimum Sufficient ChangeでGreenにし、対象テストと必要な回帰テストを実行する。
+6. 構造改善が必要なら、テストが通る状態で小さく行う。
+7. EvidenceとObservable状態を更新し、Stop Conditionを満たしたPOへの追加変更を止める。
+8. Required Outer Gateを適切な時点で実行し、Acceptance MatrixからVerdictを決める。
+9. 各段階で、目的・固定要件・スコープから逸脱していないか照合する。
+
+品質はコストとのトレードオフ対象ではない。Required Observable、固定要件、Required Regression、Required Security / Reliability Gateを満たすことをHard Constraintとし、その範囲でだけ変更量、探索範囲、コンテキスト、トークン、テスト時間、修復回数を最適化する。
 
 別のエージェントやスキルへ作業を渡す場合、全文の貼り付けを固定ルールにしない。受け手が参照できるファイルパス、対象範囲、受け入れ条件、固定要件、既存変更、期待する成果物を欠落なく伝える。
 
@@ -114,10 +122,11 @@ description: SPEC.mdを中心に、仕様、設計、実装、TDD、レビュー
 | ゲート | 進行条件 |
 |---|---|
 | 設計へ | 目的、受け入れ条件、固定要件、スコープが判断可能 |
-| 実装へ | 影響範囲と設計判断が、変更リスクに見合う粒度で記録済み |
-| レビューへ | 対象テストが通り、未検証事項が明記済み |
+| Test Contractへ | 影響範囲と設計判断が、変更リスクに見合う粒度で記録済み |
+| 実装へ | Required Observable、Proof Obligation、Evidence要件、固定制約が判断可能 |
+| レビューへ | 対象POと回帰テストが通り、未検証Observableが明記済み |
 | リリースへ | Must相当の指摘が解消し、高リスク変更はセキュリティ確認済み |
-| 完了へ | 受け入れ条件を証拠とともに照合し、残課題と既知の制約を明記済み |
+| 完了へ | すべてのRequired ObservableとRequired Outer GateがEvidence付きでPASSし、残課題と既知の制約を明記済み |
 
 ゲートを満たさない場合は、未達理由と次の安全な行動を示す。期限を理由に品質ゲートを黙って外さない。
 
@@ -144,7 +153,7 @@ description: SPEC.mdを中心に、仕様、設計、実装、TDD、レビュー
 - 目的: <何を達成したか>
 - 変更: <主要なファイル・契約・判断>
 - 検証: <コマンドと結果>
-- 受け入れ条件: <条件ごとの PASS / FAIL / 未確認>
+- Acceptance Matrix: <Requirement × Observable × Evidence の PASS / FAIL / UNVERIFIED / BLOCKED / INVALID_EVIDENCE>
 - セキュリティ・運用: <確認内容または対象外の理由>
 - 残課題: <既知の制約、次の安全な手順>
 ```
@@ -158,5 +167,7 @@ description: SPEC.mdを中心に、仕様、設計、実装、TDD、レビュー
 - 古い文書の環境情報を現在の事実として扱う
 - ユーザーの未コミット変更を自分の変更として上書きする
 - 専門スキルが無いことを理由に必要な品質確認を省く
+- トークンや時間を理由にRequired TestまたはRequired Observableを省く
+- GreenにするためTest Contract、Required Test、Expected Resultを弱める
 - テスト成功だけで、受け入れ条件・影響範囲・運用健全性を確認しない
 - 計画の承認を、デプロイや破壊的操作の実行許可とみなす
