@@ -1,0 +1,4 @@
+interface:
+  display_name: "根拠から書く"
+  short_description: "根拠を整理し、事実・解釈・仮説を分けて明快に文書化"
+  default_prompt: "Use $write-from-evidence to write from the supplied evidence and clearly separate facts, interpretations, hypotheses, and proposals."

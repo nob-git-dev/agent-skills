@@ -1,0 +1,4 @@
+interface:
+  display_name: "編集工学エディター"
+  short_description: "10の編集メソッドで文章の関係・価値・物語を再設計"
+  default_prompt: "Use $edit-with-editing-engineering to turn the supplied Japanese text into higher-value knowledge while preserving its facts."

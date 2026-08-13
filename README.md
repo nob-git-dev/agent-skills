@@ -1,14 +1,14 @@
-# Agent Skills
+# Agent Skills & Plugins
 
-> AIにコードを「書かせる」だけでなく、AIエージェントと規律をもって開発・学習・編集するための、独立したAgent Skills集。
+> AIにコードを「書かせる」だけでなく、AIエージェントと規律をもって開発・学習・知識整理するための、Agent SkillsとPluginのコレクション。
 
 全体ポートフォリオ: [AI Agent Engineering Portfolio](https://github.com/nob-git-dev/ai-agent-portfolio)
 
-このリポジトリは、各スキルを `skills/<skill-name>/` の1フォルダ単位で公開します。すべてのスキルは [Agent Skills specification](https://agentskills.io/specification) に沿った `SKILL.md` を持ち、対応するエージェントクライアントへ1つずつ導入できます。
+このリポジトリは、各スキルを `skills/<skill-name>/` の1フォルダ単位で公開し、関連するスキル群を `plugins/<plugin-name>/` にまとめて提供します。すべてのスキルは [Agent Skills specification](https://agentskills.io/specification) に沿った `SKILL.md` を持ち、1つずつでもプラグイン単位でも導入できます。
 
 特定のマシンやローカル環境を整備するスキルは含めていません。ホームディレクトリ、ポート、モデル、サービス構成など、利用者固有の環境を前提にしない構成です。
 
-## 収録スキル
+## 収録内容
 
 ### Software delivery
 
@@ -36,13 +36,15 @@
 | [skill-proposal-engine](skills/skill-proposal-engine/) | 複数の学習候補を評価し、適切な反映先とSkill Patchを提案する |
 | [skill-regression-checker](skills/skill-regression-checker/) | Skill Patchの回帰、矛盾、過剰一般化、副作用を検査する |
 
-### Writing and editing
+### Knowledge workflows
 
-| Skill | Purpose |
+| Plugin | Purpose |
 |---|---|
-| [edit-speech-transcripts](skills/edit-speech-transcripts/) | 日本語音声認識の誤りを直し、発話を保った読みやすい記録へ整える |
-| [edit-with-editing-engineering](skills/edit-with-editing-engineering/) | 編集工学のアプローチで日本語テキストの関係・構成・価値を再設計する |
-| [write-clear-business-docs](skills/write-clear-business-docs/) | 会話や断片情報を第三者に伝わる日本語ビジネス文書へ変換する |
+| [knowledge-workflows](plugins/knowledge-workflows/) | 日本語の要約、根拠に基づく執筆、編集、ビジネス文書化、対話型学習を8つのスキルとしてまとめて提供する |
+
+収録スキルは `make-clear-summary`、`make-1-3-1-summary`、`summarize`、`write-from-evidence`、`write-clear-business-docs`、`edit-speech-transcripts`、`edit-with-editing-engineering`、`learn-quiz` です。
+
+既存利用者との互換性のため、[edit-speech-transcripts](skills/edit-speech-transcripts/)、[edit-with-editing-engineering](skills/edit-with-editing-engineering/)、[write-clear-business-docs](skills/write-clear-business-docs/) は個別スキル版も残しています。
 
 ### LLM evaluation
 
@@ -50,17 +52,31 @@
 |---|---|
 | [jlmb](skills/jlmb/) | Japanese LLM Benchmarkを安全かつ再現可能に実行・比較する |
 
-合計20スキルです。
+合計20個の独立スキルと、8スキルを収録した1個のプラグインです。
 
 ## 設計方針
 
 - **1 skill = 1 directory**: 必要なスキルだけを個別に取得・更新できる
+- **Plugin as a bundle**: 関連するスキル群は、1つのプラグインとしてまとめて導入できる
 - **Portable core**: 特定エージェント製品のコマンド、フック、サブエージェント構文を必須にしない
 - **Safe by default**: コミット、デプロイ、破壊的操作、外部書き込みを暗黙に実行しない
 - **Evidence over memory**: 変わり得る環境情報は、記憶ではなく現在の設定と観測で確認する
 - **Progressive disclosure**: 長い基準、テンプレート、スクリプトは各スキルの `references/`、`assets/`、`scripts/` に分ける
 
 ## インストール
+
+### Knowledge Workflowsプラグイン
+
+Codexのリポジトリ・マーケットプレイスとして登録し、プラグインを追加します。
+
+```bash
+codex plugin marketplace add nob-git-dev/agent-skills --ref main
+codex plugin add knowledge-workflows@agent-skills
+```
+
+インストール後にChatGPTデスクトップアプリを再起動し、プラグインを有効にしてください。構成は [OpenAIのプラグイン・パッケージ仕様](https://developers.openai.com/plugins/build/plugins) に準拠しています。
+
+### 個別スキル
 
 まずリポジトリを取得します。
 
@@ -87,7 +103,7 @@ git checkout main
 
 Skillは、1つの仕事を行うための独立した指示・参照資料・スクリプトです。Pluginは、複数のSkillやツールをまとめて配布するためのパッケージです。
 
-このリポジトリでは再利用しやすいSkillを1つずつ公開します。必要に応じて、利用するクライアント側で複数スキルをPluginとして束ねられます。
+このリポジトリでは再利用しやすいSkillを1つずつ公開するとともに、関連するスキル群を `knowledge-workflows` Pluginとして束ねています。
 
 ## 安全性
 

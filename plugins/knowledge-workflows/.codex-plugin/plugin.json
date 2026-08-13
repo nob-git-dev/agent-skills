@@ -1,0 +1,39 @@
+{
+  "name": "knowledge-workflows",
+  "version": "0.1.0",
+  "description": "Japanese writing, evidence-grounded drafting, editing, clear summaries, and interactive learning workflows for ChatGPT and Codex.",
+  "author": {
+    "name": "nob-git-dev",
+    "url": "https://github.com/nob-git-dev"
+  },
+  "homepage": "https://github.com/nob-git-dev/agent-skills/tree/main/plugins/knowledge-workflows",
+  "repository": "https://github.com/nob-git-dev/agent-skills",
+  "license": "CC-BY-NC-SA-4.0",
+  "keywords": [
+    "japanese",
+    "writing",
+    "editing",
+    "summarization",
+    "knowledge-work"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Knowledge Workflows",
+    "shortDescription": "Japanese writing, clear summaries, and understanding support.",
+    "longDescription": "A portable collection for Japanese transcript editing, evidence-grounded writing, knowledge editing, business documents, adaptive clear summaries, quick 1-3-1 summaries, and interactive comprehension quizzes.",
+    "developerName": "nob-git-dev",
+    "category": "Productivity",
+    "capabilities": [
+      "writing",
+      "editing",
+      "summarization",
+      "interactive-learning"
+    ],
+    "websiteURL": "https://github.com/nob-git-dev/agent-skills/tree/main/plugins/knowledge-workflows",
+    "defaultPrompt": [
+      "この資料を、重要な意味を落とさず短く明確に要約してください。",
+      "この根拠資料から、出典との対応を保った文書を作成してください。",
+      "このメモを、第三者に伝わるビジネス文書として整理してください。"
+    ]
+  }
+}

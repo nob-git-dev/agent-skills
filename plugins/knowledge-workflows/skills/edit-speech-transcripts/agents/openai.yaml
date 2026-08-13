@@ -1,0 +1,4 @@
+interface:
+  display_name: "音声書き起こし編集・校閲"
+  short_description: "音声認識の書き起こしを忠実に整え、誤変換と専門用語を校閲"
+  default_prompt: "$edit-speech-transcripts を使い、この音声認識の書き起こしを要約せず、参照元リンクを出さずに忠実に編集・校閲してください。"

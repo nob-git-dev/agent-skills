@@ -1,0 +1,4 @@
+interface:
+  display_name: "伝わる要約"
+  short_description: "36の伝達法則を使い、指定文字数で本質が届く要約を作る"
+  default_prompt: "$summarize を使って、この内容を指定文字数で伝わる要約にしてください。"

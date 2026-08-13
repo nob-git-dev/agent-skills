@@ -1,0 +1,4 @@
+interface:
+  display_name: "対話型理解クイズ"
+  short_description: "実装や設計の理解を一問ずつ確認し、理解の穴を対話で補う"
+  default_prompt: "$learn-quiz を使って、今の作業内容を本当に理解できたか一問ずつ確認してください。"
