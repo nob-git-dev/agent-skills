@@ -1,0 +1,4 @@
+interface:
+  display_name: "伝わるビジネス文書"
+  short_description: "AI対話やメモを論理の積み上がる明快な文書へ再構成"
+  default_prompt: "$write-clear-business-docs を使って、このAI対話またはメモを、第三者に伝わる明快な文書へ再構成してください。"

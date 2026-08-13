@@ -1,0 +1,20 @@
+{
+  "name": "agent-skills",
+  "interface": {
+    "displayName": "Agent Skills by nob-git-dev"
+  },
+  "plugins": [
+    {
+      "name": "knowledge-workflows",
+      "source": {
+        "source": "local",
+        "path": "./plugins/knowledge-workflows"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

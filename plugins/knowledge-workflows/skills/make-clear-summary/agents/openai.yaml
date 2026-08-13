@@ -1,0 +1,4 @@
+interface:
+  display_name: "Make Clear Summary"
+  short_description: "核心・関係・注意点を最小限の言葉で明快に整理する要約"
+  default_prompt: "Use $make-clear-summary to turn this material into a concise, layered summary that is easy to grasp without losing essential relationships or caveats."
