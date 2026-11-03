@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI設計パターン"
+  short_description: "目的に合わせてUIの設計パターンと事例を選び、設計とレビューに使う"
+  default_prompt: "Use $design-ui-from-patterns to design or review this UI using relevant patterns, examples, and verification criteria."
