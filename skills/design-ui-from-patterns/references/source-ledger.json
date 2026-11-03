@@ -1,0 +1,2140 @@
+{
+  "schema_version": 1,
+  "original_sha256": "c64d57ad5a0f01eb50b66602852674b9c5843b6d1881a2317b97a8ee357eb539",
+  "original_bytes": 43590,
+  "original_characters": 14787,
+  "corrected_characters": 14931,
+  "unit_count": 228,
+  "units": [
+    {
+      "unit": "U001",
+      "original_line": 1,
+      "corrected_line": 1,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "競技的に",
+          "to": "狭義には"
+        }
+      ]
+    },
+    {
+      "unit": "U002",
+      "original_line": 2,
+      "corrected_line": 2,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "空は置いておいて",
+          "to": "そこは置いておいて"
+        }
+      ]
+    },
+    {
+      "unit": "U003",
+      "original_line": 3,
+      "corrected_line": 3,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U004",
+      "original_line": 4,
+      "corrected_line": 4,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "移動する",
+          "to": "依存する"
+        }
+      ]
+    },
+    {
+      "unit": "U005",
+      "original_line": 5,
+      "corrected_line": 5,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U006",
+      "original_line": 6,
+      "corrected_line": 6,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "正当されているとは言いたい",
+          "to": "整頓されているとは言い難い"
+        },
+        {
+          "from": "念食らう",
+          "to": "面食らう"
+        }
+      ]
+    },
+    {
+      "unit": "U007",
+      "original_line": 7,
+      "corrected_line": 7,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "正当されている",
+          "to": "整頓されている"
+        }
+      ]
+    },
+    {
+      "unit": "U008",
+      "original_line": 8,
+      "corrected_line": 8,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "球体以前とした",
+          "to": "旧態依然とした"
+        }
+      ]
+    },
+    {
+      "unit": "U009",
+      "original_line": 9,
+      "corrected_line": 9,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "代小",
+          "to": "大小"
+        }
+      ]
+    },
+    {
+      "unit": "U010",
+      "original_line": 10,
+      "corrected_line": 10,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "悪い UIとはいけません",
+          "to": "悪いUIとは言えません"
+        }
+      ]
+    },
+    {
+      "unit": "U011",
+      "original_line": 11,
+      "corrected_line": 11,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U012",
+      "original_line": 12,
+      "corrected_line": 12,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "宿泊しています",
+          "to": "四苦八苦しています"
+        }
+      ]
+    },
+    {
+      "unit": "U013",
+      "original_line": 13,
+      "corrected_line": 13,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U014",
+      "original_line": 14,
+      "corrected_line": 14,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U015",
+      "original_line": 15,
+      "corrected_line": 15,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U016",
+      "original_line": 16,
+      "corrected_line": 16,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "喜怒やメド",
+          "to": "輝度や明度"
+        }
+      ]
+    },
+    {
+      "unit": "U017",
+      "original_line": 17,
+      "corrected_line": 17,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U018",
+      "original_line": 18,
+      "corrected_line": 18,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U019",
+      "original_line": 19,
+      "corrected_line": 19,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U020",
+      "original_line": 20,
+      "corrected_line": 20,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U021",
+      "original_line": 21,
+      "corrected_line": 21,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "その分業の長さ",
+          "to": "その分、行の長さ"
+        }
+      ]
+    },
+    {
+      "unit": "U022",
+      "original_line": 22,
+      "corrected_line": 22,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "その分業の長さ",
+          "to": "その分、行の長さ"
+        }
+      ]
+    },
+    {
+      "unit": "U023",
+      "original_line": 23,
+      "corrected_line": 23,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U024",
+      "original_line": 24,
+      "corrected_line": 24,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "1文字のアップ 1文字",
+          "to": "1文字のアップ。1文字"
+        },
+        {
+          "from": "情報量が詰まっている感じ",
+          "to": "情報量が詰まっている漢字"
+        }
+      ]
+    },
+    {
+      "unit": "U025",
+      "original_line": 25,
+      "corrected_line": 25,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U026",
+      "original_line": 26,
+      "corrected_line": 26,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "本当の拡縮",
+          "to": "フォントの拡縮"
+        }
+      ]
+    },
+    {
+      "unit": "U027",
+      "original_line": 27,
+      "corrected_line": 27,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "本当の大きさ",
+          "to": "フォントの大きさ"
+        }
+      ]
+    },
+    {
+      "unit": "U028",
+      "original_line": 28,
+      "corrected_line": 28,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U029",
+      "original_line": 29,
+      "corrected_line": 29,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "携帯ゲーム化",
+          "to": "携帯ゲーム機"
+        },
+        {
+          "from": "本当は比較的大きく",
+          "to": "フォントは比較的大きく"
+        }
+      ]
+    },
+    {
+      "unit": "U030",
+      "original_line": 30,
+      "corrected_line": 30,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U031",
+      "original_line": 31,
+      "corrected_line": 31,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "頑張って感情を書いて",
+          "to": "頑張って漢字を書いて"
+        }
+      ]
+    },
+    {
+      "unit": "U032",
+      "original_line": 32,
+      "corrected_line": 32,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "保管して",
+          "to": "補完して"
+        }
+      ]
+    },
+    {
+      "unit": "U033",
+      "original_line": 33,
+      "corrected_line": 33,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U034",
+      "original_line": 34,
+      "corrected_line": 34,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ザラストオブアースパートワン",
+          "to": "The Last of Us Part I"
+        }
+      ]
+    },
+    {
+      "unit": "U035",
+      "original_line": 35,
+      "corrected_line": 35,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U036",
+      "original_line": 36,
+      "corrected_line": 36,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ザラストオブアース part 1",
+          "to": "The Last of Us Part I"
+        }
+      ]
+    },
+    {
+      "unit": "U037",
+      "original_line": 37,
+      "corrected_line": 37,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "利用のしやせや便利",
+          "to": "利用のしやすさや便利さ"
+        }
+      ]
+    },
+    {
+      "unit": "U038",
+      "original_line": 38,
+      "corrected_line": 38,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U039",
+      "original_line": 39,
+      "corrected_line": 39,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ハッド",
+          "to": "HUD"
+        }
+      ]
+    },
+    {
+      "unit": "U040",
+      "original_line": 40,
+      "corrected_line": 40,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U041",
+      "original_line": 41,
+      "corrected_line": 41,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U042",
+      "original_line": 42,
+      "corrected_line": 42,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "適味方",
+          "to": "敵・味方"
+        }
+      ]
+    },
+    {
+      "unit": "U043",
+      "original_line": 43,
+      "corrected_line": 43,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "チームテック",
+          "to": "Steam Deck"
+        }
+      ]
+    },
+    {
+      "unit": "U044",
+      "original_line": 44,
+      "corrected_line": 44,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "カメラと良い対策",
+          "to": "カメラと酔い対策"
+        }
+      ]
+    },
+    {
+      "unit": "U045",
+      "original_line": 45,
+      "corrected_line": 45,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "東常時中央に表示",
+          "to": "点を常時中央に表示"
+        },
+        {
+          "from": "ゲーム用意",
+          "to": "ゲーム酔い"
+        }
+      ]
+    },
+    {
+      "unit": "U046",
+      "original_line": 46,
+      "corrected_line": 46,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U047",
+      "original_line": 47,
+      "corrected_line": 47,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "利きミムモード",
+          "to": "聞き耳モード"
+        }
+      ]
+    },
+    {
+      "unit": "U048",
+      "original_line": 48,
+      "corrected_line": 48,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U049",
+      "original_line": 49,
+      "corrected_line": 49,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "音供給",
+          "to": "音響キュー"
+        }
+      ]
+    },
+    {
+      "unit": "U050",
+      "original_line": 50,
+      "corrected_line": 50,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "方向きい左右変更",
+          "to": "方向キー左右、変更。"
+        }
+      ]
+    },
+    {
+      "unit": "U051",
+      "original_line": 51,
+      "corrected_line": 51,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "オノマットペ",
+          "to": "オノマトペ"
+        }
+      ]
+    },
+    {
+      "unit": "U052",
+      "original_line": 52,
+      "corrected_line": 52,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "音供給",
+          "to": "音響キュー"
+        },
+        {
+          "from": "戦闘振動球",
+          "to": "戦闘振動キュー"
+        }
+      ]
+    },
+    {
+      "unit": "U053",
+      "original_line": 53,
+      "corrected_line": 53,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U054",
+      "original_line": 54,
+      "corrected_line": 54,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "ボディーソニックル",
+          "to": "ボディーソニック"
+        },
+        {
+          "from": "人をなぞった",
+          "to": "〔要確認：人をなぞった〕"
+        }
+      ]
+    },
+    {
+      "unit": "U055",
+      "original_line": 55,
+      "corrected_line": 55,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U056",
+      "original_line": 56,
+      "corrected_line": 56,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U057",
+      "original_line": 57,
+      "corrected_line": 57,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "死認負荷の切り替え",
+          "to": "視認不可の切り替え"
+        }
+      ]
+    },
+    {
+      "unit": "U058",
+      "original_line": 58,
+      "corrected_line": 58,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U059",
+      "original_line": 59,
+      "corrected_line": 59,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "簡弁に設定",
+          "to": "簡便に設定"
+        }
+      ]
+    },
+    {
+      "unit": "U060",
+      "original_line": 60,
+      "corrected_line": 60,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U061",
+      "original_line": 61,
+      "corrected_line": 61,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "基本デュアルセンス",
+          "to": "基本、DualSense"
+        }
+      ]
+    },
+    {
+      "unit": "U062",
+      "original_line": 62,
+      "corrected_line": 62,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U063",
+      "original_line": 63,
+      "corrected_line": 63,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U064",
+      "original_line": 64,
+      "corrected_line": 64,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "名押し式",
+          "to": "〔要確認：名押し式〕"
+        }
+      ]
+    },
+    {
+      "unit": "U065",
+      "original_line": 65,
+      "corrected_line": 65,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U066",
+      "original_line": 66,
+      "corrected_line": 66,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U067",
+      "original_line": 67,
+      "corrected_line": 67,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U068",
+      "original_line": 68,
+      "corrected_line": 68,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "デュアルセンス",
+          "to": "DualSense"
+        },
+        {
+          "from": "アダプティングトリガー",
+          "to": "アダプティブトリガー"
+        }
+      ]
+    },
+    {
+      "unit": "U069",
+      "original_line": 69,
+      "corrected_line": 69,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "オオフ",
+          "to": "オン・オフ"
+        }
+      ]
+    },
+    {
+      "unit": "U070",
+      "original_line": 70,
+      "corrected_line": 70,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "波動の調整",
+          "to": "HUDの調整"
+        },
+        {
+          "from": "ティクル",
+          "to": "レティクル"
+        }
+      ]
+    },
+    {
+      "unit": "U071",
+      "original_line": 71,
+      "corrected_line": 71,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U072",
+      "original_line": 72,
+      "corrected_line": 72,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "小さくことできます",
+          "to": "小さくすることもできます"
+        }
+      ]
+    },
+    {
+      "unit": "U073",
+      "original_line": 73,
+      "corrected_line": 73,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "名前の本を",
+          "to": "〔要確認：名前の本を〕"
+        }
+      ]
+    },
+    {
+      "unit": "U074",
+      "original_line": 74,
+      "corrected_line": 74,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U075",
+      "original_line": 75,
+      "corrected_line": 75,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "自爆全体",
+          "to": "字幕全体"
+        }
+      ]
+    },
+    {
+      "unit": "U076",
+      "original_line": 76,
+      "corrected_line": 76,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U077",
+      "original_line": 77,
+      "corrected_line": 77,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "コーフレームレート",
+          "to": "高フレームレート"
+        }
+      ]
+    },
+    {
+      "unit": "U078",
+      "original_line": 78,
+      "corrected_line": 78,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U079",
+      "original_line": 79,
+      "corrected_line": 79,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "通常へとの比較",
+          "to": "〔要確認：通常へとの比較〕"
+        }
+      ]
+    },
+    {
+      "unit": "U080",
+      "original_line": 80,
+      "corrected_line": 80,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U081",
+      "original_line": 81,
+      "corrected_line": 81,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U082",
+      "original_line": 82,
+      "corrected_line": 82,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U083",
+      "original_line": 83,
+      "corrected_line": 83,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U084",
+      "original_line": 84,
+      "corrected_line": 84,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ザラストオブ us partワン",
+          "to": "The Last of Us Part I"
+        }
+      ]
+    },
+    {
+      "unit": "U085",
+      "original_line": 85,
+      "corrected_line": 85,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "またされる",
+          "to": "待たされる"
+        }
+      ]
+    },
+    {
+      "unit": "U086",
+      "original_line": 86,
+      "corrected_line": 86,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "労働時間",
+          "to": "ロード時間"
+        },
+        {
+          "from": "初体バイオハザード",
+          "to": "初代バイオハザード"
+        },
+        {
+          "from": "飛びのエース",
+          "to": "扉の演出"
+        }
+      ]
+    },
+    {
+      "unit": "U087",
+      "original_line": 87,
+      "corrected_line": 87,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "恒例",
+          "to": "好例"
+        }
+      ]
+    },
+    {
+      "unit": "U088",
+      "original_line": 88,
+      "corrected_line": 88,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "強ざめ",
+          "to": "興ざめ"
+        }
+      ]
+    },
+    {
+      "unit": "U089",
+      "original_line": 89,
+      "corrected_line": 89,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ハードル読み込み速度",
+          "to": "ハードの読み込み速度"
+        },
+        {
+          "from": "ローティング",
+          "to": "ローディング"
+        }
+      ]
+    },
+    {
+      "unit": "U090",
+      "original_line": 90,
+      "corrected_line": 90,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "素直につもが良い",
+          "to": "素直に示すのが良い"
+        }
+      ]
+    },
+    {
+      "unit": "U091",
+      "original_line": 91,
+      "corrected_line": 91,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "労働時間",
+          "to": "ロード時間"
+        }
+      ]
+    },
+    {
+      "unit": "U092",
+      "original_line": 92,
+      "corrected_line": 92,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U093",
+      "original_line": 93,
+      "corrected_line": 93,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U094",
+      "original_line": 94,
+      "corrected_line": 94,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U095",
+      "original_line": 95,
+      "corrected_line": 95,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U096",
+      "original_line": 96,
+      "corrected_line": 96,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U097",
+      "original_line": 97,
+      "corrected_line": 97,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U098",
+      "original_line": 98,
+      "corrected_line": 98,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "となりしろ",
+          "to": "何しろ"
+        }
+      ]
+    },
+    {
+      "unit": "U099",
+      "original_line": 99,
+      "corrected_line": 99,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "マンプ",
+          "to": "漫符"
+        }
+      ]
+    },
+    {
+      "unit": "U100",
+      "original_line": 100,
+      "corrected_line": 100,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "マンプ",
+          "to": "漫符"
+        },
+        {
+          "from": "人物の香",
+          "to": "人物の顔"
+        }
+      ]
+    },
+    {
+      "unit": "U101",
+      "original_line": 101,
+      "corrected_line": 101,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U102",
+      "original_line": 102,
+      "corrected_line": 102,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U103",
+      "original_line": 103,
+      "corrected_line": 103,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U104",
+      "original_line": 104,
+      "corrected_line": 104,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U105",
+      "original_line": 105,
+      "corrected_line": 105,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U106",
+      "original_line": 106,
+      "corrected_line": 106,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U107",
+      "original_line": 107,
+      "corrected_line": 107,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "天皇世界",
+          "to": "電脳世界"
+        }
+      ]
+    },
+    {
+      "unit": "U108",
+      "original_line": 108,
+      "corrected_line": 108,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U109",
+      "original_line": 109,
+      "corrected_line": 109,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U110",
+      "original_line": 110,
+      "corrected_line": 110,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U111",
+      "original_line": 111,
+      "corrected_line": 111,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U112",
+      "original_line": 112,
+      "corrected_line": 112,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U113",
+      "original_line": 113,
+      "corrected_line": 113,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "背景の壁紙要請作品アイコン",
+          "to": "背景の壁紙、〔要確認：要請作品〕、アイコン"
+        },
+        {
+          "from": "効果を切大",
+          "to": "効果は絶大。"
+        }
+      ]
+    },
+    {
+      "unit": "U114",
+      "original_line": 114,
+      "corrected_line": 114,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "本当だけ",
+          "to": "フォントだけ"
+        }
+      ]
+    },
+    {
+      "unit": "U115",
+      "original_line": 115,
+      "corrected_line": 115,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "本当にも",
+          "to": "フォントにも"
+        }
+      ]
+    },
+    {
+      "unit": "U116",
+      "original_line": 116,
+      "corrected_line": 116,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U117",
+      "original_line": 117,
+      "corrected_line": 117,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "囲後",
+          "to": "以後"
+        },
+        {
+          "from": "スマブラスペシャル",
+          "to": "スマブラSPECIAL"
+        }
+      ]
+    },
+    {
+      "unit": "U118",
+      "original_line": 118,
+      "corrected_line": 118,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U119",
+      "original_line": 119,
+      "corrected_line": 119,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U120",
+      "original_line": 120,
+      "corrected_line": 120,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "トーマナー",
+          "to": "トーン＆マナー"
+        }
+      ]
+    },
+    {
+      "unit": "U121",
+      "original_line": 121,
+      "corrected_line": 121,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U122",
+      "original_line": 122,
+      "corrected_line": 122,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "スマホの方",
+          "to": "スマブラの方"
+        }
+      ]
+    },
+    {
+      "unit": "U123",
+      "original_line": 123,
+      "corrected_line": 123,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U124",
+      "original_line": 124,
+      "corrected_line": 124,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U125",
+      "original_line": 125,
+      "corrected_line": 125,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "トーンマナー",
+          "to": "トーン＆マナー"
+        }
+      ]
+    },
+    {
+      "unit": "U126",
+      "original_line": 126,
+      "corrected_line": 126,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U127",
+      "original_line": 127,
+      "corrected_line": 127,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "代小",
+          "to": "大小"
+        }
+      ]
+    },
+    {
+      "unit": "U128",
+      "original_line": 128,
+      "corrected_line": 128,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U129",
+      "original_line": 129,
+      "corrected_line": 129,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U130",
+      "original_line": 130,
+      "corrected_line": 130,
+      "status": "corrected",
+      "edits": []
+    },
+    {
+      "unit": "U131",
+      "original_line": 131,
+      "corrected_line": 131,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U132",
+      "original_line": 132,
+      "corrected_line": 132,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U133",
+      "original_line": 133,
+      "corrected_line": 133,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U134",
+      "original_line": 134,
+      "corrected_line": 134,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "婚約",
+          "to": "翻訳"
+        }
+      ]
+    },
+    {
+      "unit": "U135",
+      "original_line": 135,
+      "corrected_line": 135,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U136",
+      "original_line": 136,
+      "corrected_line": 136,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U137",
+      "original_line": 137,
+      "corrected_line": 137,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U138",
+      "original_line": 138,
+      "corrected_line": 138,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ジョブダイヤル",
+          "to": "ジョグダイヤル"
+        }
+      ]
+    },
+    {
+      "unit": "U139",
+      "original_line": 139,
+      "corrected_line": 139,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U140",
+      "original_line": 140,
+      "corrected_line": 140,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "コイール",
+          "to": "ホイール"
+        }
+      ]
+    },
+    {
+      "unit": "U141",
+      "original_line": 141,
+      "corrected_line": 141,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U142",
+      "original_line": 142,
+      "corrected_line": 142,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U143",
+      "original_line": 143,
+      "corrected_line": 143,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U144",
+      "original_line": 144,
+      "corrected_line": 144,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U145",
+      "original_line": 145,
+      "corrected_line": 145,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U146",
+      "original_line": 146,
+      "corrected_line": 146,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U147",
+      "original_line": 147,
+      "corrected_line": 147,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U148",
+      "original_line": 148,
+      "corrected_line": 148,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U149",
+      "original_line": 149,
+      "corrected_line": 149,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "オープニング幕合でもイベントなどを",
+          "to": "オープニング、幕間デモ、イベントなど。"
+        }
+      ]
+    },
+    {
+      "unit": "U150",
+      "original_line": 150,
+      "corrected_line": 150,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U151",
+      "original_line": 151,
+      "corrected_line": 151,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U152",
+      "original_line": 152,
+      "corrected_line": 152,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U153",
+      "original_line": 153,
+      "corrected_line": 153,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U154",
+      "original_line": 154,
+      "corrected_line": 154,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "実機でもは",
+          "to": "実機デモは"
+        },
+        {
+          "from": "ある程度はわか",
+          "to": "ある程度はわか……〔発話途切れ〕"
+        }
+      ]
+    },
+    {
+      "unit": "U155",
+      "original_line": 155,
+      "corrected_line": 155,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U156",
+      "original_line": 156,
+      "corrected_line": 156,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U157",
+      "original_line": 157,
+      "corrected_line": 157,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U158",
+      "original_line": 158,
+      "corrected_line": 158,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U159",
+      "original_line": 159,
+      "corrected_line": 159,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U160",
+      "original_line": 160,
+      "corrected_line": 160,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U161",
+      "original_line": 161,
+      "corrected_line": 161,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U162",
+      "original_line": 162,
+      "corrected_line": 162,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "Weic",
+          "to": "〔要確認：Wii以降、〕"
+        }
+      ]
+    },
+    {
+      "unit": "U163",
+      "original_line": 163,
+      "corrected_line": 163,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U164",
+      "original_line": 164,
+      "corrected_line": 164,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "キーコンピングゲーム",
+          "to": "キーコンフィグのゲーム"
+        }
+      ]
+    },
+    {
+      "unit": "U165",
+      "original_line": 165,
+      "corrected_line": 165,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U166",
+      "original_line": 166,
+      "corrected_line": 166,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U167",
+      "original_line": 167,
+      "corrected_line": 167,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U168",
+      "original_line": 168,
+      "corrected_line": 168,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U169",
+      "original_line": 169,
+      "corrected_line": 169,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "罰ボタン",
+          "to": "×ボタン"
+        },
+        {
+          "from": "丸ボタン",
+          "to": "○ボタン"
+        }
+      ]
+    },
+    {
+      "unit": "U170",
+      "original_line": 170,
+      "corrected_line": 170,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "PSフォー",
+          "to": "PS4"
+        },
+        {
+          "from": "罰ボタン",
+          "to": "×ボタン"
+        }
+      ]
+    },
+    {
+      "unit": "U171",
+      "original_line": 171,
+      "corrected_line": 171,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U172",
+      "original_line": 172,
+      "corrected_line": 172,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U173",
+      "original_line": 173,
+      "corrected_line": 173,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U174",
+      "original_line": 174,
+      "corrected_line": 174,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U175",
+      "original_line": 175,
+      "corrected_line": 175,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "ね。そこ私はまたくちょっとはい。なん",
+          "to": "〔聞き取り不明：ね。そこ私はまたくちょっとはい。なん〕"
+        }
+      ]
+    },
+    {
+      "unit": "U176",
+      "original_line": 176,
+      "corrected_line": 176,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U177",
+      "original_line": 177,
+      "corrected_line": 177,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U178",
+      "original_line": 178,
+      "corrected_line": 178,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U179",
+      "original_line": 179,
+      "corrected_line": 179,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U180",
+      "original_line": 180,
+      "corrected_line": 180,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U181",
+      "original_line": 181,
+      "corrected_line": 181,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U182",
+      "original_line": 182,
+      "corrected_line": 182,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "お",
+          "to": "〔音声断片：お〕"
+        }
+      ]
+    },
+    {
+      "unit": "U183",
+      "original_line": 183,
+      "corrected_line": 183,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U184",
+      "original_line": 184,
+      "corrected_line": 184,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U185",
+      "original_line": 185,
+      "corrected_line": 185,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "面と豪然",
+          "to": "〔要確認：面と豪然〕"
+        }
+      ]
+    },
+    {
+      "unit": "U186",
+      "original_line": 186,
+      "corrected_line": 186,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U187",
+      "original_line": 187,
+      "corrected_line": 187,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U188",
+      "original_line": 188,
+      "corrected_line": 188,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U189",
+      "original_line": 189,
+      "corrected_line": 189,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U190",
+      "original_line": 190,
+      "corrected_line": 190,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U191",
+      "original_line": 191,
+      "corrected_line": 191,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U192",
+      "original_line": 192,
+      "corrected_line": 192,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U193",
+      "original_line": 193,
+      "corrected_line": 193,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U194",
+      "original_line": 194,
+      "corrected_line": 194,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U195",
+      "original_line": 195,
+      "corrected_line": 195,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U196",
+      "original_line": 196,
+      "corrected_line": 196,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "説明方",
+          "to": "説明過多"
+        },
+        {
+          "from": "遂行",
+          "to": "推敲"
+        }
+      ]
+    },
+    {
+      "unit": "U197",
+      "original_line": 197,
+      "corrected_line": 197,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "直訳派ではなく医薬風",
+          "to": "直訳風ではなく意訳風"
+        }
+      ]
+    },
+    {
+      "unit": "U198",
+      "original_line": 198,
+      "corrected_line": 198,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U199",
+      "original_line": 199,
+      "corrected_line": 199,
+      "status": "uncertain",
+      "edits": [
+        {
+          "from": "口じゃなんですけど",
+          "to": "〔要確認：口じゃなんですけど〕"
+        }
+      ]
+    },
+    {
+      "unit": "U200",
+      "original_line": 200,
+      "corrected_line": 200,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U201",
+      "original_line": 201,
+      "corrected_line": 201,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U202",
+      "original_line": 202,
+      "corrected_line": 202,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U203",
+      "original_line": 203,
+      "corrected_line": 203,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U204",
+      "original_line": 204,
+      "corrected_line": 204,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U205",
+      "original_line": 205,
+      "corrected_line": 205,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U206",
+      "original_line": 206,
+      "corrected_line": 206,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U207",
+      "original_line": 207,
+      "corrected_line": 207,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ボタン連打したき",
+          "to": "ボタン連打したとき"
+        },
+        {
+          "from": "スマブラスペシャル",
+          "to": "スマブラSPECIAL"
+        }
+      ]
+    },
+    {
+      "unit": "U208",
+      "original_line": 208,
+      "corrected_line": 208,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U209",
+      "original_line": 209,
+      "corrected_line": 209,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U210",
+      "original_line": 210,
+      "corrected_line": 210,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "カービアの場合",
+          "to": "カービィのエアライドの場合"
+        }
+      ]
+    },
+    {
+      "unit": "U211",
+      "original_line": 211,
+      "corrected_line": 211,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U212",
+      "original_line": 212,
+      "corrected_line": 212,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U213",
+      "original_line": 213,
+      "corrected_line": 213,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U214",
+      "original_line": 214,
+      "corrected_line": 214,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ハッド",
+          "to": "HUD"
+        }
+      ]
+    },
+    {
+      "unit": "U215",
+      "original_line": 215,
+      "corrected_line": 215,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "パッド",
+          "to": "HUD"
+        }
+      ]
+    },
+    {
+      "unit": "U216",
+      "original_line": 216,
+      "corrected_line": 216,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ハッド",
+          "to": "HUD"
+        }
+      ]
+    },
+    {
+      "unit": "U217",
+      "original_line": 217,
+      "corrected_line": 217,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ハッド",
+          "to": "HUD"
+        }
+      ]
+    },
+    {
+      "unit": "U218",
+      "original_line": 218,
+      "corrected_line": 218,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U219",
+      "original_line": 219,
+      "corrected_line": 219,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "没入荷",
+          "to": "没入感"
+        },
+        {
+          "from": "表情",
+          "to": "表示"
+        },
+        {
+          "from": "昨日重視",
+          "to": "機能重視"
+        }
+      ]
+    },
+    {
+      "unit": "U220",
+      "original_line": 220,
+      "corrected_line": 220,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U221",
+      "original_line": 221,
+      "corrected_line": 221,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U222",
+      "original_line": 222,
+      "corrected_line": 222,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "感染者",
+          "to": "観戦者"
+        }
+      ]
+    },
+    {
+      "unit": "U223",
+      "original_line": 223,
+      "corrected_line": 223,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "投手",
+          "to": "闘志"
+        }
+      ]
+    },
+    {
+      "unit": "U224",
+      "original_line": 224,
+      "corrected_line": 224,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ワンピーカーソル",
+          "to": "1Pカーソル"
+        }
+      ]
+    },
+    {
+      "unit": "U225",
+      "original_line": 225,
+      "corrected_line": 225,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U226",
+      "original_line": 226,
+      "corrected_line": 226,
+      "status": "unchanged",
+      "edits": []
+    },
+    {
+      "unit": "U227",
+      "original_line": 227,
+      "corrected_line": 227,
+      "status": "corrected",
+      "edits": [
+        {
+          "from": "ハッド",
+          "to": "HUD"
+        }
+      ]
+    },
+    {
+      "unit": "U228",
+      "original_line": 228,
+      "corrected_line": 228,
+      "status": "unchanged",
+      "edits": []
+    }
+  ]
+}
