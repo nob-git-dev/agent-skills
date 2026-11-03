@@ -8,6 +8,12 @@
 
 特定のマシンやローカル環境を整備するスキルは含めていません。ホームディレクトリ、ポート、モデル、サービス構成など、利用者固有の環境を前提にしない構成です。
 
+## AIが最初に読む入口
+
+依頼に合うスキルは [スキル選択ガイド](SKILLS.md) で選びます。機械処理用の一覧は [skills-index.json](skills-index.json)、AIへの共通指示は [AGENTS.md](AGENTS.md) です。選んだSKILL.mdを読み、必要な参照資料だけを開いてください。
+
+[他のAIでの利用方法](docs/using-with-other-agents.md) に、フォルダ一式の使い方、UI設計と実装の分担、統合版の生成方法をまとめています。
+
 ## 収録内容
 
 ### Software delivery
@@ -20,6 +26,7 @@
 | [ddd](skills/ddd/) | ユビキタス言語、コンテキスト、集約を設計する |
 | [test-contract](skills/test-contract/) | RequirementからObservable、Evidence、Proof Obligationを固定する |
 | [tdd](skills/tdd/) | Proof ObligationをRed-Green-Refactorと最小十分変更でPASSへ変える |
+| [design-ui-from-patterns](skills/design-ui-from-patterns/) | 24の設計パターンと具体的な事例から、目的に合うUIの設計・レビューを行う |
 | [ui](skills/ui/) | UI/UX、React、アクセシビリティ、操作検証を扱う |
 | [review](skills/review/) | 正確性、セキュリティ、性能、保守性、テストをレビューする |
 | [security](skills/security/) | 脅威、アクセス制御、依存関係、シークレット、濫用を検証する |
@@ -52,7 +59,9 @@
 |---|---|
 | [jlmb](skills/jlmb/) | Japanese LLM Benchmarkを安全かつ再現可能に実行・比較する |
 
-合計20個の独立スキルと、8スキルを収録した1個のプラグインです。
+合計21個の独立スキルと、8スキルを収録した1個のプラグインです。
+
+UI設計の [統合版](dist/design-ui-from-patterns.md) と [校正版原稿付き統合版](dist/design-ui-from-patterns-with-source.md) も用意しています。スキルを読み分けられないAIへ指示・資料として渡せます。正本は [スキルのフォルダ](skills/design-ui-from-patterns/) です。
 
 ## 設計方針
 

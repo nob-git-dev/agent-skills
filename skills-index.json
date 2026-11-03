@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "entry_guide": "SKILLS.md",
+  "agent_instructions": "AGENTS.md",
+  "path_base": "repository-root",
+  "selection_rule": "Match the user goal to descriptions, choose the narrowest suitable skill, read its complete SKILL.md, then only the referenced files needed. Aliases are alternative packages, not additional skills to run.",
+  "skills": [
+    {
+      "name": "architect",
+      "description": "ソフトウェアアーキテクチャを設計し、レイヤー、依存方向、コンポーネント境界、影響範囲、ADRを整理する。構造変更、技術選定、インターフェース変更、移行設計、設計レビューで使う。",
+      "entrypoint": "skills/architect/SKILL.md",
+      "directory": "skills/architect",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "ddd",
+      "description": "ドメイン駆動設計に基づき、ユビキタス言語、境界づけられたコンテキスト、集約、エンティティ、値オブジェクト、ドメインイベントを設計する。複雑な業務概念やドメインモデリングで使う。",
+      "entrypoint": "skills/ddd/SKILL.md",
+      "directory": "skills/ddd",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "deploy",
+      "description": "ソフトウェアを安全にリリースするため、ビルド検証、変更影響、段階実行、ヘルスチェック、監視、中断基準、ロールバック計画を扱う。リリース、環境変更、本番影響のある変更で使う。",
+      "entrypoint": "skills/deploy/SKILL.md",
+      "directory": "skills/deploy",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "design-ui-from-patterns",
+      "description": "Design or review UI by selecting context-appropriate patterns, concrete game examples, tradeoffs, and verification criteria. Use for visual hierarchy, world or brand expression, menus, typography, localization, settings, accessibility options, input remapping, loading, playback controls, help, and HUD feedback. Supports games, web apps, and business tools with explicit adaptation. For React implementation use the ui skill optionally; do not use this skill for unrelated writing, backend-only work, or accessibility certification.",
+      "entrypoint": "skills/design-ui-from-patterns/SKILL.md",
+      "directory": "skills/design-ui-from-patterns",
+      "aliases": [],
+      "selection": "ui-design-decisions"
+    },
+    {
+      "name": "edit-speech-transcripts",
+      "description": "Edit and proofread Japanese speech-to-text transcripts from interviews, podcasts, lectures, classes, webinars, meetings, and videos while preserving every speaker's words, sequence, tone, and primary information without summarizing. Use when cleaning ASR or AI transcription errors, correcting punctuation and grammar, formatting dialogue and speakers, restoring supported conversational nuance, or verifying the spelling and existence of technical terms, proper nouns, product names, and field-specific jargon.",
+      "entrypoint": "skills/edit-speech-transcripts/SKILL.md",
+      "directory": "skills/edit-speech-transcripts",
+      "aliases": [
+        {
+          "entrypoint": "plugins/knowledge-workflows/skills/edit-speech-transcripts/SKILL.md",
+          "directory": "plugins/knowledge-workflows/skills/edit-speech-transcripts",
+          "description": "Edit and proofread Japanese speech-to-text transcripts from interviews, podcasts, lectures, classes, webinars, meetings, and videos while preserving every speaker's words, sequence, tone, and primary information without summarizing. Use when cleaning ASR or AI transcription errors, correcting punctuation and grammar, formatting dialogue and speakers, restoring supported conversational nuance, or verifying the spelling and existence of technical terms, proper nouns, product names, and field-specific jargon."
+        }
+      ],
+      "selection": "match-description"
+    },
+    {
+      "name": "edit-with-editing-engineering",
+      "description": "与えられた日本語テキストを、編集工学の10アプローチ／10メソッドに基づいて、事実と書き手の声を保ちながら新しい関係・見方・価値・物語を持つナレッジへ編集する。文章のリライト、企画書・解説文・ブランド文・スピーチ・記事の価値向上、視点転換、構成再設計、編集プロセスの説明や比較が必要なときに使う。",
+      "entrypoint": "skills/edit-with-editing-engineering/SKILL.md",
+      "directory": "skills/edit-with-editing-engineering",
+      "aliases": [
+        {
+          "entrypoint": "plugins/knowledge-workflows/skills/edit-with-editing-engineering/SKILL.md",
+          "directory": "plugins/knowledge-workflows/skills/edit-with-editing-engineering",
+          "description": "与えられた日本語テキストを、編集工学の10アプローチ／10メソッドに基づいて、事実と書き手の声を保ちながら新しい関係・見方・価値・物語を持つナレッジへ編集する。文章のリライト、企画書・解説文・ブランド文・スピーチ・記事の価値向上、視点転換、構成再設計、編集プロセスの説明や比較が必要なときに使う。"
+        }
+      ],
+      "selection": "match-description"
+    },
+    {
+      "name": "jlmb",
+      "description": "Japanese LLM Benchmark（shi3z/japanese-llm-benchmark）を再現可能かつ安全に実行し、日本語要約、キーワード抽出、コーディング、視覚評価などの結果を比較する。モデル評価、推論サーバー比較、ベンチマーク再実行、結果レポート作成で使う。",
+      "entrypoint": "skills/jlmb/SKILL.md",
+      "directory": "skills/jlmb",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "learn-quiz",
+      "description": "A patient interactive teaching mode for deeply understanding a coding session, PR, diff, concept, architecture, or other completed work. Use when the user asks to be quizzed, coached, taught what was just done, walked through a solution, or to verify their understanding rather than receive a passive summary. Drive an incremental problem → solution → broader-context loop, maintain a visible mastery checklist, and ask one open-ended or multiple-choice question at a time using the interaction available in the current Codex surface.",
+      "entrypoint": "plugins/knowledge-workflows/skills/learn-quiz/SKILL.md",
+      "directory": "plugins/knowledge-workflows/skills/learn-quiz",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "make-1-3-1-summary",
+      "description": "Turn Japanese text, articles, meeting notes, reports, transcripts, URLs, and files into a quick 1-3-1 summary: one-sentence gist, up to three essential points, and one important caution or condition when needed. Use when the user asks for a 1-3-1 summary, a quick overview, content at a glance, or a short and easy way to grasp the main point. Prioritize faithful comprehension over persuasion, promotion, or stylistic impact.",
+      "entrypoint": "plugins/knowledge-workflows/skills/make-1-3-1-summary/SKILL.md",
+      "directory": "plugins/knowledge-workflows/skills/make-1-3-1-summary",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "make-clear-summary",
+      "description": "Transform Japanese text, conversations, articles, reports, meeting notes, transcripts, URLs, and files into an adaptive, neutral summary that is immediately understandable without losing essential facts, relationships, or caveats. Use when the user asks for make-clear-summary, a clear summary, an easy overview, a brief explanation of complex material, or a fast way to understand what something means. Do not use when the user explicitly requests the fixed 1-3-1 format or persuasive character-limited copy.",
+      "entrypoint": "plugins/knowledge-workflows/skills/make-clear-summary/SKILL.md",
+      "directory": "plugins/knowledge-workflows/skills/make-clear-summary",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "observe",
+      "description": "ログ、メトリクス、トレース、アラート、ダッシュボードを設計し、既知・未知の問題を検知・調査できる状態を作る。計装、監視、調査可能性、運用改善で使う。",
+      "entrypoint": "skills/observe/SKILL.md",
+      "directory": "skills/observe",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "post-project-learning-engine",
+      "description": "プロジェクトやタスクの完了後に起動する「学習エンジン」。AIエージェントの作業内容・成果物・ユーザー反応を分析し、復元した成功条件との差分から、次回の行動ルールを When / Then 形式で抽出して Learning Log を生成する。単なる反省文ではなく、次回の挙動を改善する Candidate（候補）を作るのが目的で、抽出した学習を恒久スキルに直接昇格させない。プロジェクト・案件・開発タスクが一段落した後の「ふりかえり」「振り返り」「レトロ」「retrospective」、「今回の学びをまとめて」「次回どう改善する？」「何がまずかった／良かった？」といった依頼で必ず起動する。`sdlc` 完了後の学習フェーズとしても呼び出す。",
+      "entrypoint": "skills/post-project-learning-engine/SKILL.md",
+      "directory": "skills/post-project-learning-engine",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "refactor",
+      "description": "外部から観察できる振る舞いを保ったままコード構造を改善し、重複、長い関数、巨大クラス、変更の散弾などの技術的負債を小さな検証可能な手順で返済する。リファクタリングや構造改善で使う。",
+      "entrypoint": "skills/refactor/SKILL.md",
+      "directory": "skills/refactor",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "review",
+      "description": "コード変更を仕様適合、正確性、セキュリティ、性能、保守性、テストの観点でレビューし、重要度と根拠つきの指摘を返す。コードレビュー、品質ゲート、実装後検証で使う。",
+      "entrypoint": "skills/review/SKILL.md",
+      "directory": "skills/review",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "sdlc",
+      "description": "SPEC.mdを中心に、仕様、設計、Test Contract、TDD、レビュー、セキュリティ、デプロイをリスクに応じて段階的に進めるSDLCオーケストレーター。開発タスクを規律あるプロセスで進める時や仕様駆動開発を求められた時に使う。",
+      "entrypoint": "skills/sdlc/SKILL.md",
+      "directory": "skills/sdlc",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "security",
+      "description": "脅威モデリング、アクセス制御、シークレット管理、依存関係、入力検証、攻撃者視点の検証を行う。認証、権限、支払い、個人情報、ファイル受付、DB変更、外部API、本番影響のある変更で使う。",
+      "entrypoint": "skills/security/SKILL.md",
+      "directory": "skills/security",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "skill-proposal-engine",
+      "description": "複数の Post-Project Learning Log を横断分析し、どの学習をスキル本体／チェックリスト／ワークフロー／出力テンプレート／ツール使用ルール／確認質問ルール／ローカルメモリに反映すべきかを判断する「スキル提案エンジン」。目的はすべてをスキル化することではなく、スキル化すべきでない学習を除外し、本当に次回のAIエージェントの挙動を改善するものだけを選別すること。Global / Domain / Local / One-off / Rejected を判定し、スコアリングして Skill Patch を提案する。Learning Log が複数たまった後、「どの学びをスキルにすべき？」「学習を棚卸し／棚卸ししたい」「スキル化候補を評価して」「Skill Patch を作って」「学習を一般化できる？」「学習を整理して反映先を決めて」といった依頼で必ず起動する。post-project-learning-engine が生成した Candidate の後段評価工程として呼び出す。",
+      "entrypoint": "skills/skill-proposal-engine/SKILL.md",
+      "directory": "skills/skill-proposal-engine",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "skill-regression-checker",
+      "description": "Skill Proposal Engine が作成した Skill Patch・チェックリスト更新案・ワークフロー更新案・テンプレート更新案・ツール使用ルール更新案を検査し、既存スキルの良い挙動を壊さないか（回帰）、過剰一般化・矛盾・重複・肥大化・副作用がないかを確認する「回帰チェッカー」。目的は更新案の承認ではなく、既存の成功パターンを壊さないか・不要な複雑化を生まないか・適用範囲を誤っていないかを検査し、Approve / Revise / Reject / Human Review / Defer を判定すること。Positive / Negative / Edge の3テストシナリオを必ず作る。Skill Patch やスキル更新案ができた後、「この更新案を検査して」「回帰しないか確認して」「このパッチを承認していい？」「スキルを壊さないかチェックして」「更新の副作用を見て」といった依頼で必ず起動する。skill-proposal-engine の後段（採用前ゲート）として呼び出す。",
+      "entrypoint": "skills/skill-regression-checker/SKILL.md",
+      "directory": "skills/skill-regression-checker",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "spec",
+      "description": "作るものの目的、振る舞い、受け入れ条件、スコープ、固定要件、変更禁止事項をSPEC.mdへ明文化する。開発前の要件整理、曖昧な依頼の明確化、変更目的の合意、仕様レビューで使う。",
+      "entrypoint": "skills/spec/SKILL.md",
+      "directory": "skills/spec",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "sre",
+      "description": "SLI、SLO、SLA、エラーバジェット、障害対応、ポストモーテム、トイル削減を扱い、サービス信頼性を定量的に設計・改善する。信頼性、運用、障害、サービス品質の設計や調査で使う。",
+      "entrypoint": "skills/sre/SKILL.md",
+      "directory": "skills/sre",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "summarize",
+      "description": "「バナナの魅力を100文字で伝えてください」の36法則を体系的に適用し、任意のコンテンツを指定文字数で「伝わる要約」に変換するスキル",
+      "entrypoint": "plugins/knowledge-workflows/skills/summarize/SKILL.md",
+      "directory": "plugins/knowledge-workflows/skills/summarize",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "tdd",
+      "description": "Test Contractまたは受け入れ条件からProof Obligationを選び、Red-Green-RefactorでMinimum Sufficient Changeを実装する。Required ObservableをEvidence付きでPASSへ変え、回帰防止と検証可能な実装を進める時に使う。",
+      "entrypoint": "skills/tdd/SKILL.md",
+      "directory": "skills/tdd",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "test-contract",
+      "description": "SPEC.mdの要求・受け入れ条件から、完成判定に必要なObservable、Test Scenario、Evidence、Proof Obligationを定義する。TDD実装前に何を証明するかと品質条件を固定し、品質制約を保ったまま実装範囲・探索空間・変更量を最適化する時に使う。",
+      "entrypoint": "skills/test-contract/SKILL.md",
+      "directory": "skills/test-contract",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
+      "name": "ui",
+      "description": "ユーザーの目的を基点に、Web UI/UX、Reactコンポーネント、状態設計、アクセシビリティ、ユーザビリティ、視覚・操作検証を扱う。画面、デザイン、フロントエンド実装の変更で使う。",
+      "entrypoint": "skills/ui/SKILL.md",
+      "directory": "skills/ui",
+      "aliases": [],
+      "selection": "ui-implementation"
+    },
+    {
+      "name": "write-clear-business-docs",
+      "description": "Transform AI conversations, meeting notes, research, and complex ideas into clear Japanese business documents for third-party readers. Use when an AI agent needs to document project discussions, explain a new concept step by step, turn transcripts or rough notes into reports, decision records, proposals, or explanatory articles, or revise Japanese prose for structure, readability, logical continuity, and evidence discipline. Preserve source meaning, separate facts from interpretations, hypotheses, and proposals, and avoid imitating any specific living author.",
+      "entrypoint": "skills/write-clear-business-docs/SKILL.md",
+      "directory": "skills/write-clear-business-docs",
+      "aliases": [
+        {
+          "entrypoint": "plugins/knowledge-workflows/skills/write-clear-business-docs/SKILL.md",
+          "directory": "plugins/knowledge-workflows/skills/write-clear-business-docs",
+          "description": "Transform AI conversations, meeting notes, research, and complex ideas into clear Japanese business documents for third-party readers. Use when Codex needs to document project discussions, explain a new concept step by step, turn transcripts or rough notes into reports, decision records, proposals, or explanatory articles, or revise Japanese prose for structure, readability, logical continuity, and evidence discipline. Preserve source meaning, separate facts from interpretations, hypotheses, and proposals, and avoid imitating any specific living author."
+        }
+      ],
+      "selection": "match-description"
+    },
+    {
+      "name": "write-from-evidence",
+      "description": "Write Japanese articles, reports, proposals, explanations, and decision documents from supplied evidence while preserving provenance and separating facts, interpretations, hypotheses, and proposals. Use when the user needs evidence-grounded writing, claim-to-source traceability, citation-aware drafting, conflict handling between sources, or an audit of whether a conclusion is supported; do not use it to silently fill missing information with plausible guesses.",
+      "entrypoint": "plugins/knowledge-workflows/skills/write-from-evidence/SKILL.md",
+      "directory": "plugins/knowledge-workflows/skills/write-from-evidence",
+      "aliases": [],
+      "selection": "match-description"
+    }
+  ]
+}
