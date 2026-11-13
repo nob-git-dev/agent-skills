@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ことば花火</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sky-deep: #071820;
+      --sky-mid: #0d3a42;
+      --sky-glow: #1a5c58;
+      --spark-a: #ffb347;
+      --spark-b: #7fdbda;
+      --spark-c: #ff6b6b;
+      --spark-d: #ffe66d;
+      --ink: #e8f4f2;
+      --muted: #9bb8b4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: "Zen Kaku Gothic New", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 120% 80% at 50% 100%, var(--sky-glow) 0%, transparent 55%),
+        radial-gradient(ellipse 90% 60% at 20% 10%, #14303a 0%, transparent 50%),
+        linear-gradient(180deg, var(--sky-deep) 0%, var(--sky-mid) 100%);
+      cursor: crosshair;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .stage {
+      position: relative;
+      z-index: 1;
+      min-height: 100%;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      pointer-events: none;
+    }
+
+    .brand {
+      font-family: "Yusei Magic", sans-serif;
+      font-size: clamp(2.6rem, 10vw, 4.5rem);
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+      text-shadow: 0 0 40px rgba(127, 219, 218, 0.35);
+      animation: drift 6s ease-in-out infinite;
+    }
+
+    .hint {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      animation: fade-in 1.2s ease both;
+    }
+
+    .count {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--spark-b);
+      opacity: 0.85;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <main class="stage">
+    <h1 class="brand">ことば花火</h1>
+    <p class="hint">画面をタップすると、ことばが花火になります</p>
+    <p class="count" id="count" aria-live="polite">打ち上げ 0 発</p>
+  </main>
+
+  <script>
+    // ここを編集してみよう：花火に出る言葉を変えられます
+    const WORDS = ["わくわく", "ありがとう", "がんばる", "やすらぎ", "ひらめき", "すてき", "ほっこり", "どきどき", "光", "夢", "風"];
+
+    const COLORS = ["#ffb347", "#7fdbda", "#ff6b6b", "#ffe66d", "#a8e6cf", "#ff8fab"];
+
+    const canvas = document.getElementById("sky");
+    const ctx = canvas.getContext("2d");
+    const countEl = document.getElementById("count");
+
+    let particles = [];
+    let launches = 0;
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+
+    function resize() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function pick(list) {
+      return list[Math.floor(Math.random() * list.length)];
+    }
+
+    function burst(x, y) {
+      const word = pick(WORDS);
+      const color = pick(COLORS);
+      const count = 28 + Math.floor(Math.random() * 12);
+
+      for (let i = 0; i < count; i++) {
+        const angle = (Math.PI * 2 * i) / count + Math.random() * 0.2;
+        const speed = 2.2 + Math.random() * 3.4;
+        particles.push({
+          x,
+          y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          life: 1,
+          decay: 0.012 + Math.random() * 0.016,
+          size: 2 + Math.random() * 3,
+          color,
+          word: i === 0 ? word : null,
+        });
+      }
+
+      launches += 1;
+      countEl.textContent = `打ち上げ ${launches} 発`;
+    }
+
+    function tick() {
+      ctx.clearRect(0, 0, width, height);
+
+      particles = particles.filter((p) => p.life > 0);
+
+      for (const p of particles) {
+        p.vy += 0.035;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.99;
+        p.vy *= 0.99;
+        p.life -= p.decay;
+
+        ctx.globalAlpha = Math.max(p.life, 0);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (p.word) {
+          ctx.font = '700 1.15rem "Yusei Magic", sans-serif';
+          ctx.fillStyle = p.color;
+          ctx.fillText(p.word, p.x + 10, p.y - 8);
+        }
+      }
+
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(tick);
+    }
+
+    function onPointer(event) {
+      const point = event.touches ? event.touches[0] : event;
+      burst(point.clientX, point.clientY);
+    }
+
+    window.addEventListener("resize", resize);
+    window.addEventListener("pointerdown", onPointer);
+    resize();
+    tick();
+  </script>
+</body>
+</html>
