@@ -24,8 +24,8 @@
 | [spec](skills/spec/) | 目的、振る舞い、受け入れ条件、固定要件を仕様へ落とす |
 | [architect](skills/architect/) | 境界、依存方向、影響範囲、ADRを設計する |
 | [ddd](skills/ddd/) | ユビキタス言語、コンテキスト、集約を設計する |
-| [test-contract](skills/test-contract/) | RequirementからObservable、Evidence、Proof Obligationを固定する |
-| [tdd](skills/tdd/) | Proof ObligationをRed-Green-Refactorと最小十分変更でPASSへ変える |
+| [test-contract](skills/test-contract/) | 高リスク変更で、RequirementからObservable、Evidence、Proof Obligationを実装前に固定する |
+| [tdd](skills/tdd/) | 受け入れ条件（高リスク変更ではTest Contract）から、失敗を確認したテストを先に置いて実装する |
 | [design-ui-from-patterns](skills/design-ui-from-patterns/) | 24の設計パターンと具体的な事例から、目的に合うUIの設計・レビューを行う |
 | [ui](skills/ui/) | UI/UX、React、アクセシビリティ、操作検証を扱う |
 | [review](skills/review/) | 正確性、セキュリティ、性能、保守性、テストをレビューする |
@@ -120,6 +120,10 @@ Skillは、1つの仕事を行うための独立した指示・参照資料・�
 スキルはエージェントの判断を支援しますが、実行環境の権限規則やユーザー承認を置き換えません。特に、削除、データ移行、本番変更、外部送信、長時間の資源占有では、対象・影響・可逆性を確認してください。
 
 JLMBの補助スクリプトはローカルのループバックアドレスを既定とし、APIキーを環境変数から読みます。実行前にコードと依存関係を確認してください。
+
+## 変更履歴
+
+スキルの振る舞いが変わる変更と、その理由は [CHANGELOG.md](CHANGELOG.md) に記録しています。
 
 ## ライセンス
 

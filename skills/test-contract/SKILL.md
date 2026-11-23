@@ -1,6 +1,6 @@
 ---
 name: test-contract
-description: SPEC.mdの要求・受け入れ条件から、完成判定に必要なObservable、Test Scenario、Evidence、Proof Obligationを定義する。TDD実装前に何を証明するかと品質条件を固定し、品質制約を保ったまま実装範囲・探索空間・変更量を最適化する時に使う。
+description: 高リスク変更（認証、認可、金銭、個人情報、永続データ、移行、破壊操作、外部副作用、本番、高負荷）で、SPEC.mdの要求から完成判定に必要なObservable、Test Scenario、Evidence、Proof Obligationを実装前に固定する。軽量・標準の変更はSPEC.mdの受け入れ条件で足りるため使わない。
 ---
 
 # Test Contract デザイナー
@@ -38,7 +38,7 @@ AND Required Regression Tests = PASS
 AND Required Security / Reliability Gates = PASS
 ```
 
-Hard Constraintを満たす解の中でだけ、変更範囲、変更LOC、読み込むコード、コンテキスト、LLM Call、トークン、テスト時間、修復回数を小さくする。Required TestまたはRequired Observableを、トークン・時間・実装量の削減を理由に省略してはならない。
+Hard Constraintを満たす解の中でだけ、変更範囲とテスト時間を小さくする。Required TestまたはRequired Observableを、トークン・時間・実装量の削減を理由に省略してはならない。
 
 目標は単純な最小コードではなく、次の Minimum Sufficient Change である。
 
@@ -50,11 +50,13 @@ Hard Constraintを満たす解の中でだけ、変更範囲、変更LOC、読�
 
 | 区分 | 例 | 必要な契約 |
 |---|---|---|
-| Lightweight | typo、文言、単純な局所バグ | Expected behavior、Observable、Verification command |
-| Standard | 新機能、API、複数ファイル、状態変更 | Requirement、Observable、Scenario、Evidence、Proof Obligationを明示 |
-| High Risk | 認証、認可、金銭、個人情報、永続化、移行、破壊操作、外部副作用、本番、高負荷 | 詳細な制約、失敗条件、Security / Reliability / Outer Gateを必須化 |
+| Lightweight | typo、文言、単純な局所バグ | 作らない。期待する振る舞いと確認コマンドを作業計画に書く |
+| Standard | 新機能、API、複数ファイル、状態変更 | 作らない。`SPEC.md` の受け入れ条件と検証方法で完成を判定する |
+| High Risk | 認証、認可、金銭、個人情報、永続化、移行、破壊操作、外部副作用、本番、高負荷 | Test Contract を作る。詳細な制約、失敗条件、Security / Reliability / Outer Gateを必須化 |
 
-すべての観点を機械的に追加しない。Requirementの性質、影響、失敗時の被害に必要なObservableだけをRequiredにする。
+Lightweight / Standard で呼ばれた場合は、契約を作らず、`SPEC.md` の受け入れ条件に検証方法が欠けていればそれを補うに留める。
+
+すべての観点を機械的に追加しない。Requirementの性質、影響、失敗時の被害に必要なObservableだけをRequiredにする。Observable と Proof Obligation の数は少ないほどよい。数を増やすことは網羅性ではない。
 
 ## 3. Requirementを固定する
 
@@ -121,35 +123,9 @@ R-001 Upload contract
   O-003 over 10MB returns 413       -> PO-003
 ```
 
-原則として1つのPOは1つの主要Observableを対象とする。複数Observableが不可分なら、結合理由と同じEvidenceで証明できる根拠を記録する。POを実装方法やファイル単位で定義しない。
+POは、まとめて実装・検証できる振る舞いの単位で切る。同じ機能の正常系・異常系・境界値のように一緒に実装して一緒に確かめられるObservableは、1つのPOにまとめる。Observable 1つごとに機械的にPOを分けない。POを実装方法やファイル単位で定義しない。
 
-TDDへはシステム全体の完成要求ではなく、未達POごとに次を渡す。
-
-```yaml
-proof_obligation:
-  id: PO-003
-requirement:
-  id: R-001
-observable:
-  id: O-003
-  expected: "10MBより大きいファイルは413"
-current_evidence:
-  status: fail
-  command: "pytest ..."
-  failure: "returned 200"
-constraints:
-  tests_are_fixed: true
-  api_contract_is_fixed: true
-allowed_scope:
-  - src/upload.py
-related_context:
-  - src/upload.py
-  - tests/test_upload.py
-target:
-  required_status: pass
-```
-
-`allowed_scope` は根拠なく狭く固定しない。既知の関連範囲を記載し、範囲外が必要になった場合は理由を示して契約または計画を再確認する。
+TDDへは、POの一覧と、各POが対象とするObservable、期待結果、現在のEvidence、固定制約を渡す。読むコードの範囲と編集するファイルは実装者が判断する。契約側で範囲を狭く指定しない。
 
 ## 7. Inner LoopとOuter Gateを分ける
 
@@ -173,15 +149,7 @@ EvidenceがそのObservableを本当に証明するかを、実装工程と分�
 
 状態は `PASS`、`FAIL`、`UNVERIFIED`、`BLOCKED`、`INVALID_EVIDENCE` を使う。Required Observableが一つでもPASS以外なら、Requirement全体をPASSにしない。一般テストスイートが成功していても、必要なObservableを覆わなければ `UNVERIFIED` である。
 
-## 9. Context Compression by Contract
-
-POごとに、Requirement、Observable、固定制約、現在Evidence、関連ファイルを小さな入力契約へまとめる。目的はトークン削減自体ではなく、探索空間を縮めて判断、誤変更、再探索を減らすことである。
-
-関連ファイルは根拠を持って選ぶ。リポジトリ全体を既定入力にせず、同時に、品質を証明するために必要な依存関係をコンテキスト節約だけで除外しない。
-
-この境界により、高性能モデルがRequirement・設計・Test Contractを定義し、ローカルまたは小規模モデルが明確なPOの実装・修復を担当できる。モデル分担は任意であり、モデル能力やコストを理由にHard Constraint、Required Evidence、最終Judgeを弱めない。
-
-## 10. 最小論理スキーマ
+## 9. 最小論理スキーマ
 
 ファイル形式にかかわらず、最低限次の情報を保持する。
 
@@ -207,7 +175,7 @@ proof_obligations:
 
 Requirementに応じて `constraints`、`test_data`、`timeouts`、`failure_conditions`、`environment`、`security`、`reliability`、`performance` を追加する。初回導入ではYAML / JSONの厳密validationを必須にしない。
 
-## 11. 標準成果物
+## 10. 標準成果物
 
 ```markdown
 # Test Contract
@@ -234,17 +202,10 @@ Requirementに応じて `constraints`、`test_data`、`timeouts`、`failure_cond
 - Required: true
 
 ## Proof Obligations
-### PO-001 -> O-001
+### PO-001 -> O-001, O-002
 - Current evidence: FAIL / UNVERIFIED / ...
-- Allowed scope:
-- Related context:
 - Fixed constraints:
-- Stop condition: O-001 PASS + required regression PASS + constraints preserved
-
-## Optimization Constraints
-- Allowed scope:
-- Forbidden changes:
-- Preferred context:
+- Stop condition: 対象Observable PASS + required regression PASS + constraints preserved
 
 ## Acceptance Matrix
 | Requirement | Observable | Proof Obligation | Evidence | Status |
@@ -254,7 +215,7 @@ Requirementに応じて `constraints`、`test_data`、`timeouts`、`failure_cond
 
 プロジェクトが別形式を採用している場合は形式を合わせるが、Requirement、Observable、Scenario、Expected、Evidence、Proof Obligationの対応は失わない。
 
-## 12. 固定と変更管理
+## 11. 固定と変更管理
 
 - TDD開始前にRequired ObservableとProof Obligationを固定する。
 - Test Contract工程は契約案、Test Plan、新規テスト候補、Observable、POを変更できる。
@@ -270,11 +231,13 @@ AND Required Regression = PASS
 AND Fixed Constraints = preserved
 ```
 
-この条件を満たした時点で、そのPOに対する実装を止める。ついでの改善は行わず、必要なら別POまたは明示されたRefactor工程へ分ける。
+この条件を満たした時点で、そのPOに対する実装を止める。ついでの改善は行わず、気づいた問題は報告し、必要なら別POまたは明示されたRefactor工程へ分ける。
 
 ## アンチパターン
 
 - 思いつくテストを全部追加するTest explosion
+- Observable 1つごとにPOを立て、POの数を網羅性とみなす
+- 軽量・標準の変更にもTest Contractを作る
 - 既存実装から逆算して通しやすい契約を書くImplementation-driven Contract
 - トークンや時間を理由にRequired検証を省くQuality / Cost Tradeoff
 - Observable behaviorではなく内部実装を過度に固定するOver-specification

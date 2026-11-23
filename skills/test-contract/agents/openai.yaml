@@ -1,4 +1,4 @@
 interface:
   display_name: "Test Contract"
-  short_description: "要求からObservableとProof Obligationを固定します"
-  default_prompt: "$test-contract を使って、SPEC.mdからRequired ObservableとProof Obligationを定義してください。"
+  short_description: "高リスク変更の完成判定を実装前に固定します"
+  default_prompt: "$test-contract を使って、この高リスク変更のSPEC.mdからRequired ObservableとProof Obligationを定義してください。"

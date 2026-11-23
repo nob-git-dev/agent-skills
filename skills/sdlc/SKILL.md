@@ -88,8 +88,8 @@ description: SPEC.mdを中心に、仕様、設計、Test Contract、TDD、レ�
 | 設計 (`architect`) | 境界、依存、技術選定、移行を変える | 構造、影響マップ、ADR |
 | ドメイン (`ddd`) | 複雑な業務概念や整合性境界がある | 用語、コンテキスト、集約 |
 | UI (`ui`) | 画面、操作、アクセシビリティを変える | UX設計、状態、操作テスト |
-| Test Contract (`test-contract`) | 振る舞いを実装する前 | Required Observable、Evidence要件、Proof Obligation |
-| 実装・TDD (`tdd`) | 未達Proof Obligationを実装する | Red-Green-Refactor、Minimum Sufficient Change、Evidence |
+| Test Contract (`test-contract`) | 高リスク変更で、完成判定を実装前に固定する必要がある | Required Observable、Evidence要件、Proof Obligation |
+| 実装・TDD (`tdd`) | 振る舞いを実装・変更する | 失敗を確認したテスト、必要十分な変更、検証結果 |
 | リファクタ (`refactor`) | 振る舞いを保って構造を変える | 小さな変更、回帰確認 |
 | レビュー (`review`) | コードまたは設定を変更した | 重要度・根拠つき指摘、判定 |
 | セキュリティ (`security`) | 信頼境界、機密データ、高リスク変更 | 脅威、対策、残余リスク |
@@ -99,34 +99,41 @@ description: SPEC.mdを中心に、仕様、設計、Test Contract、TDD、レ�
 
 すべてのフェーズを機械的に実行しない。省略するフェーズは、リスク上不要である理由を短く記録する。
 
-標準的な新機能は `spec -> 必要なdesign -> test-contract -> tdd -> review` の順で進める。軽量変更ではExpected behavior、Observable、Verification commandだけの簡易Contractでよい。認証、認可、金銭、個人情報、永続化、移行、破壊操作、外部副作用、本番、高負荷を含む場合は、Security / Reliability / Outer Gateを含む詳細Contractを要求する。
+標準的な新機能は `spec -> 必要なdesign -> tdd -> review` の順で進める。完成判定は `SPEC.md` の受け入れ条件と検証方法で行い、Test Contract は作らない。軽量変更は期待する振る舞いと確認コマンドを作業計画に書けば足りる。
+
+`test-contract` を挟むのは高リスク変更だけである。認証、認可、金銭、個人情報、永続データ、移行、破壊操作、外部副作用、本番、高負荷を含む場合に、`design -> test-contract -> tdd` の順で進め、Security / Reliability / Outer Gate を含む契約を要求する。
+
+既に `TEST_CONTRACT.md` を持つ進行中の案件は、その契約を正典として最後まで使う。
+
+工程は原則として同じ会話の中で続ける。ユーザーとのやり取りで決まった前提を次の工程がそのまま使えるようにするためである。別のコンテキストに切り離すのは、作った本人でない目が要る `review` と `security` だけにする。
 
 ## 5. 実装を小さく進める
 
 1. 変更前の基準となるテストまたは観測結果を取る。
-2. Test ContractでRequirementからRequired Observable、Evidence、Proof Obligationを固定する。
-3. 未達Proof Obligationを1つ選び、必要な制約、現在Evidence、関連ファイルだけへコンテキストを絞る。
-4. 対応する失敗テストを実行してRedを確認する。
-5. Minimum Sufficient ChangeでGreenにし、対象テストと必要な回帰テストを実行する。
-6. 構造改善が必要なら、テストが通る状態で小さく行う。
-7. EvidenceとObservable状態を更新し、Stop Conditionを満たしたPOへの追加変更を止める。
-8. Required Outer Gateを適切な時点で実行し、Acceptance MatrixからVerdictを決める。
-9. 各段階で、目的・固定要件・スコープから逸脱していないか照合する。
+2. 受け入れ条件を、まとめて実装・検証できる振る舞いの単位に分ける。条件1つごとに機械的に刻まない。
+3. 単位ごとに、対応する失敗テストを実行して、期待した理由で失敗することを確認する。
+4. 必要十分な変更でテストを通し、対象テストと必要な回帰テストを実行する。
+5. 構造改善が必要なら、テストが通る状態で小さく行う。
+6. 結合・実機・負荷など重い検証は、まとまった時点と最後に実行する。実行できなかったものは未検証と書く。
+7. 各段階で、目的・固定要件・スコープから逸脱していないか照合する。
 
-品質はコストとのトレードオフ対象ではない。Required Observable、固定要件、Required Regression、Required Security / Reliability Gateを満たすことをHard Constraintとし、その範囲でだけ変更量、探索範囲、コンテキスト、トークン、テスト時間、修復回数を最適化する。
+Test Contract がある案件では、手順2の単位を契約の Proof Obligation に読み替える。関連する Proof Obligation はまとめて進めてよい。
 
-別のエージェントやスキルへ作業を渡す場合、全文の貼り付けを固定ルールにしない。受け手が参照できるファイルパス、対象範囲、受け入れ条件、固定要件、既存変更、期待する成果物を欠落なく伝える。
+関連するコードは必要なだけ読む。変更は依頼の範囲に留め、範囲外で気づいた問題は直さずに報告する。結果を変える解釈の分かれ目に当たったら、独断で進めずユーザーに確認する。
+
+品質はコストとのトレードオフ対象ではない。受け入れ条件、固定要件、必要な回帰テスト、高リスク変更のセキュリティ・信頼性確認を満たすことが先で、変更量とテスト時間を減らすのはその範囲内に限る。
+
+`review` や `security` へ渡すときは、参照できるファイルパス、対象範囲、受け入れ条件、固定要件、既存変更、会話で決まった前提、期待する成果物を欠落なく伝える。
 
 ## 6. 品質ゲート
 
 | ゲート | 進行条件 |
 |---|---|
 | 設計へ | 目的、受け入れ条件、固定要件、スコープが判断可能 |
-| Test Contractへ | 影響範囲と設計判断が、変更リスクに見合う粒度で記録済み |
-| 実装へ | Required Observable、Proof Obligation、Evidence要件、固定制約が判断可能 |
-| レビューへ | 対象POと回帰テストが通り、未検証Observableが明記済み |
+| 実装へ | 影響範囲と設計判断が変更リスクに見合う粒度で記録済みで、受け入れ条件と検証方法が判断可能（高リスクは Test Contract 確定済み） |
+| レビューへ | 対象のテストと回帰テストが通り、未検証の受け入れ条件が明記済み |
 | リリースへ | Must相当の指摘が解消し、高リスク変更はセキュリティ確認済み |
-| 完了へ | すべてのRequired ObservableとRequired Outer GateがEvidence付きでPASSし、残課題と既知の制約を明記済み |
+| 完了へ | すべての受け入れ条件と必要な重い検証が、実行結果つきでPASSし、残課題と既知の制約を明記済み |
 
 ゲートを満たさない場合は、未達理由と次の安全な行動を示す。期限を理由に品質ゲートを黙って外さない。
 
@@ -153,7 +160,7 @@ description: SPEC.mdを中心に、仕様、設計、Test Contract、TDD、レ�
 - 目的: <何を達成したか>
 - 変更: <主要なファイル・契約・判断>
 - 検証: <コマンドと結果>
-- Acceptance Matrix: <Requirement × Observable × Evidence の PASS / FAIL / UNVERIFIED / BLOCKED / INVALID_EVIDENCE>
+- 受け入れ条件ごとの判定: <PASS（実際に確認した） / UNVERIFIED（設計上は満たすが未確認） / FAIL / BLOCKED と、その根拠>
 - セキュリティ・運用: <確認内容または対象外の理由>
 - 残課題: <既知の制約、次の安全な手順>
 ```
@@ -167,7 +174,9 @@ description: SPEC.mdを中心に、仕様、設計、Test Contract、TDD、レ�
 - 古い文書の環境情報を現在の事実として扱う
 - ユーザーの未コミット変更を自分の変更として上書きする
 - 専門スキルが無いことを理由に必要な品質確認を省く
-- トークンや時間を理由にRequired TestまたはRequired Observableを省く
-- GreenにするためTest Contract、Required Test、Expected Resultを弱める
+- 受け入れ条件を機械的に細分化し、管理項目の数を増やすことを網羅性とみなす
+- 工程ごとにコンテキストを切り離し、会話で決まった前提を文書の受け渡しだけに頼る
+- トークンや時間を理由に、必要なテストや受け入れ条件の確認を省く
+- テストを通すために、受け入れ条件、既存テスト、期待結果を弱める
 - テスト成功だけで、受け入れ条件・影響範囲・運用健全性を確認しない
 - 計画の承認を、デプロイや破壊的操作の実行許可とみなす

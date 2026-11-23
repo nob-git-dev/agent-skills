@@ -29,8 +29,8 @@
 | 目的・振る舞い・受け入れ条件を仕様にする | [spec](skills/spec/SKILL.md) |
 | 境界・依存関係・設計判断 | [architect](skills/architect/SKILL.md) |
 | 業務用語・コンテキスト・集約 | [ddd](skills/ddd/SKILL.md) |
-| 要求から観測・証拠・テスト義務を定義 | [test-contract](skills/test-contract/SKILL.md) |
-| テスト義務に基づいて実装を進める | [tdd](skills/tdd/SKILL.md) |
+| 高リスク変更の完成判定（観測・証拠・テスト義務）を実装前に固定 | [test-contract](skills/test-contract/SKILL.md) |
+| 受け入れ条件から、テストを先に置いて実装を進める | [tdd](skills/tdd/SKILL.md) |
 | コードの正確性・保守性等をレビュー | [review](skills/review/SKILL.md) |
 | 脅威、権限、依存関係、秘密情報、濫用 | [security](skills/security/SKILL.md) |
 | リリース・段階展開・ロールバック | [deploy](skills/deploy/SKILL.md) |
