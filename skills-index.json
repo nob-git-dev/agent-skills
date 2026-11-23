@@ -187,7 +187,7 @@
     },
     {
       "name": "tdd",
-      "description": "Test Contractまたは受け入れ条件からProof Obligationを選び、Red-Green-RefactorでMinimum Sufficient Changeを実装する。Required ObservableをEvidence付きでPASSへ変え、回帰防止と検証可能な実装を進める時に使う。",
+      "description": "SPEC.mdの受け入れ条件（高リスク案件ではTest Contract）から、失敗を確認したテストを先に置き、必要十分な変更で実装する。回帰防止と、実行結果つきで検証可能な実装を進める時に使う。",
       "entrypoint": "skills/tdd/SKILL.md",
       "directory": "skills/tdd",
       "aliases": [],
@@ -195,7 +195,7 @@
     },
     {
       "name": "test-contract",
-      "description": "SPEC.mdの要求・受け入れ条件から、完成判定に必要なObservable、Test Scenario、Evidence、Proof Obligationを定義する。TDD実装前に何を証明するかと品質条件を固定し、品質制約を保ったまま実装範囲・探索空間・変更量を最適化する時に使う。",
+      "description": "高リスク変更（認証、認可、金銭、個人情報、永続データ、移行、破壊操作、外部副作用、本番、高負荷）で、SPEC.mdの要求から完成判定に必要なObservable、Test Scenario、Evidence、Proof Obligationを実装前に固定する。軽量・標準の変更はSPEC.mdの受け入れ条件で足りるため使わない。",
       "entrypoint": "skills/test-contract/SKILL.md",
       "directory": "skills/test-contract",
       "aliases": [],
