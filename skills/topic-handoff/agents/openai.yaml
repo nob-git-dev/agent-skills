@@ -1,0 +1,4 @@
+interface:
+  display_name: "スキル・ハンドオフ"
+  short_description: "会話から目的と根拠を選び、話題別に次のチャット用プロンプトを作成"
+  default_prompt: "$topic-handoff を使い、この会話を話題別に次のセッションへ引き継いでください。"

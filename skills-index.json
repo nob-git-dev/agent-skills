@@ -202,6 +202,14 @@
       "selection": "match-description"
     },
     {
+      "name": "topic-handoff",
+      "description": "会話から、新しいセッションの最初に貼れる独立した引き継ぎプロンプトを作る。利用者が「スキル・ハンドオフ」、単独の「/スキル」、「/スキル 話題名」、または話題別の引き継ぎ・別チャットへの分岐を求めたときに使う。引数なしは全話題、引数ありは指定範囲を扱う。",
+      "entrypoint": "skills/topic-handoff/SKILL.md",
+      "directory": "skills/topic-handoff",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
       "name": "ui",
       "description": "ユーザーの目的を基点に、Web UI/UX、Reactコンポーネント、状態設計、アクセシビリティ、ユーザビリティ、視覚・操作検証を扱う。画面、デザイン、フロントエンド実装の変更で使う。",
       "entrypoint": "skills/ui/SKILL.md",

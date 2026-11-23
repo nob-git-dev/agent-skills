@@ -39,6 +39,7 @@
 
 | Skill | Purpose |
 |---|---|
+| [topic-handoff](skills/topic-handoff/) | 会話の全話題または指定した話題から、別のAIで再開するためのプロンプトを作る |
 | [post-project-learning-engine](skills/post-project-learning-engine/) | 完了案件から次回の行動ルール候補を抽出する |
 | [skill-proposal-engine](skills/skill-proposal-engine/) | 複数の学習候補を評価し、適切な反映先とSkill Patchを提案する |
 | [skill-regression-checker](skills/skill-regression-checker/) | Skill Patchの回帰、矛盾、過剰一般化、副作用を検査する |
@@ -59,7 +60,7 @@
 |---|---|
 | [jlmb](skills/jlmb/) | Japanese LLM Benchmarkを安全かつ再現可能に実行・比較する |
 
-合計21個の独立スキルと、8スキルを収録した1個のプラグインです。
+合計22個の独立スキルと、8スキルを収録した1個のプラグインです。
 
 UI設計の [統合版](dist/design-ui-from-patterns.md) と [校正版原稿付き統合版](dist/design-ui-from-patterns-with-source.md) も用意しています。スキルを読み分けられないAIへ指示・資料として渡せます。正本は [スキルのフォルダ](skills/design-ui-from-patterns/) です。
 

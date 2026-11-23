@@ -42,6 +42,7 @@
 
 | 依頼の中心 | 入口 |
 |---|---|
+| 会話を別セッションに引き継ぐ（`/スキル` は話題別にすべて、`/スキル 話題名` は指定分のみ） | [topic-handoff](skills/topic-handoff/SKILL.md) |
 | 自然な長さで分かりやすく要約 | [make-clear-summary](plugins/knowledge-workflows/skills/make-clear-summary/SKILL.md) |
 | 1文・最大3点・1つの注意という形式 | [make-1-3-1-summary](plugins/knowledge-workflows/skills/make-1-3-1-summary/SKILL.md) |
 | 指定文字数で伝える要約 | [summarize](plugins/knowledge-workflows/skills/summarize/SKILL.md) |
