@@ -66,6 +66,14 @@
       "selection": "match-description"
     },
     {
+      "name": "explainer-script",
+      "description": "ニュースや技術テーマを、「なんなん?」の TPU 回（YouTube SKIZlHaF-Ek）と同じ型の解説動画台本・解説記事にする。型の中身は、見出しの常識を一次資料で崩して謎を作る、問いの連鎖で進める、数字を必ず比較や身近な量に換算する、たとえを1系統で通す、自分の構図を自分で崩す、割り引いたうえで持論を言い切る、見るべき3点で締める、の7つ。「解説動画の台本を書いて」「〇〇を△△みたいに解説して」「YouTube 用に解説して」「なんなん風に」「ニュースを深掘り解説して」と言われたら起動する。既存の動画や記事の要約ではなく、新しい解説コンテンツを作るときに使う。",
+      "entrypoint": "skills/explainer-script/SKILL.md",
+      "directory": "skills/explainer-script",
+      "aliases": [],
+      "selection": "match-description"
+    },
+    {
       "name": "jlmb",
       "description": "Japanese LLM Benchmark（shi3z/japanese-llm-benchmark）を再現可能かつ安全に実行し、日本語要約、キーワード抽出、コーディング、視覚評価などの結果を比較する。モデル評価、推論サーバー比較、ベンチマーク再実行、結果レポート作成で使う。",
       "entrypoint": "skills/jlmb/SKILL.md",

@@ -66,5 +66,10 @@ class PortableSkillTests(unittest.TestCase):
             result = run(SKILL / "scripts/export_portable.py", "--output", ROOT / "dist" / name, "--check", *flags)
             self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_chat_bundles_are_current(self):
+        for zipped in sorted((ROOT / "dist").glob("*.zip")):
+            result = run(ROOT / "scripts/export_skill_bundle.py", zipped.stem, "--check")
+            self.assertEqual(result.returncode, 0, result.stderr)
+
 if __name__ == "__main__":
     unittest.main()
