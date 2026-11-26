@@ -47,6 +47,7 @@
 | 1文・最大3点・1つの注意という形式 | [make-1-3-1-summary](plugins/knowledge-workflows/skills/make-1-3-1-summary/SKILL.md) |
 | 指定文字数で伝える要約 | [summarize](plugins/knowledge-workflows/skills/summarize/SKILL.md) |
 | 根拠・解釈・仮説を分けて文章を書く | [write-from-evidence](plugins/knowledge-workflows/skills/write-from-evidence/SKILL.md) |
+| 謎で引っ張る解説動画の台本・解説記事を新しく書く（要約ではない） | [explainer-script](skills/explainer-script/SKILL.md) |
 | 第三者に伝わるビジネス文書 | [write-clear-business-docs](skills/write-clear-business-docs/SKILL.md) |
 | 発言と順序を残して文字起こしを全文校正 | [edit-speech-transcripts](skills/edit-speech-transcripts/SKILL.md) |
 | 見方・構成・関係を組み替える編集 | [edit-with-editing-engineering](skills/edit-with-editing-engineering/SKILL.md) |
