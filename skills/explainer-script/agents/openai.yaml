@@ -1,0 +1,4 @@
+interface:
+  display_name: "謎で引っ張る深掘り解説"
+  short_description: "見出しの常識を一次資料で崩し、問いの連鎖・数字の換算・たとえ1系統で解説台本や記事を書く"
+  default_prompt: "$explainer-script を使い、［テーマ］を解説動画の台本にしてください。"

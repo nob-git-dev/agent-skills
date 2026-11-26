@@ -44,6 +44,12 @@
 | [skill-proposal-engine](skills/skill-proposal-engine/) | 複数の学習候補を評価し、適切な反映先とSkill Patchを提案する |
 | [skill-regression-checker](skills/skill-regression-checker/) | Skill Patchの回帰、矛盾、過剰一般化、副作用を検査する |
 
+### Content creation
+
+| Skill | Purpose |
+|---|---|
+| [explainer-script](skills/explainer-script/) | 見出しの常識を一次資料で崩して謎を作り、問いの連鎖・数字の換算・たとえ1系統・自己反転・持論で、解説動画の台本や解説記事を書く |
+
 ### Knowledge workflows
 
 | Plugin | Purpose |
@@ -60,7 +66,7 @@
 |---|---|
 | [jlmb](skills/jlmb/) | Japanese LLM Benchmarkを安全かつ再現可能に実行・比較する |
 
-合計22個の独立スキルと、8スキルを収録した1個のプラグインです。
+合計23個の独立スキルと、8スキルを収録した1個のプラグインです。
 
 UI設計の [統合版](dist/design-ui-from-patterns.md) と [校正版原稿付き統合版](dist/design-ui-from-patterns-with-source.md) も用意しています。スキルを読み分けられないAIへ指示・資料として渡せます。正本は [スキルのフォルダ](skills/design-ui-from-patterns/) です。
 
@@ -108,6 +114,12 @@ git checkout main
 ```
 
 クライアントが `agents/openai.yaml` を使わない場合、そのファイルは無視して構いません。ポータブルな指示本体は `SKILL.md` です。
+
+### チャットアプリで使う
+
+- **Claude のアプリ（Web・デスクトップ・スマートフォン）**: 設定の「機能」→「スキル」で、[dist](dist/) にある `<skill>.zip` をアップロードします。以後、どのチャットでも依頼の内容に合わせて自動で読み込まれます。現在 zip を用意しているのは `explainer-script` です。
+- **スキルを登録できないチャット（ChatGPT の通常チャット・プロジェクトの指示欄など）**: [dist](dist/) にある `<skill>.md`（参照資料まで1ファイルにまとめた統合版）を、プロジェクトの指示や添付ファイルとして渡します。
+- 統合版と zip は `python3 scripts/export_skill_bundle.py <skill-name>` で作り直せます。手で直さず、元のフォルダを直してから再生成してください。
 
 ## SkillとPluginの違い
 
