@@ -1,6 +1,6 @@
 # Agent Skills & Plugins
 
-> AIにコードを「書かせる」だけでなく、AIエージェントと規律をもって開発・学習・知識整理するための、Agent SkillsとPluginのコレクション。
+> AIにコードを「書かせる」だけでなく、AIエージェントと規律をもって開発・学習・知識整理・解説コンテンツづくりをするための、Agent SkillsとPluginのコレクション。
 
 全体ポートフォリオ: [AI Agent Engineering Portfolio](https://github.com/nob-git-dev/ai-agent-portfolio)
 
